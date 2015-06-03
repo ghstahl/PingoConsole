@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingoConsole", "PingoConsole\PingoConsole.csproj", "{0FD76881-9D95-49B9-8B52-019C877F46DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingoConsole.Resources", "PingoConsole.Resources\PingoConsole.Resources.csproj", "{017B1F55-1925-4456-8C99-0B86F634BA12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FD76881-9D95-49B9-8B52-019C877F46DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FD76881-9D95-49B9-8B52-019C877F46DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FD76881-9D95-49B9-8B52-019C877F46DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FD76881-9D95-49B9-8B52-019C877F46DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{017B1F55-1925-4456-8C99-0B86F634BA12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{017B1F55-1925-4456-8C99-0B86F634BA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{017B1F55-1925-4456-8C99-0B86F634BA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{017B1F55-1925-4456-8C99-0B86F634BA12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
