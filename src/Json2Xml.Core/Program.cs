@@ -47,12 +47,14 @@ namespace Json2Xml.Core
                 p.Options.HelpDumpOptions();
                 ParserHelp.HelpDumpUsage();
                 Environment.ExitCode = ERROR_BAD_ARGUMENTS;
+                return;
             }
             if (!ValidateArguments())
             {
                 p.Options.HelpDumpOptions();
                 ParserHelp.HelpDumpUsage();
                 Environment.ExitCode = ERROR_BAD_ARGUMENTS;
+                return;
             }
 
             ProcessCommand();
