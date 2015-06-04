@@ -70,6 +70,15 @@ namespace Json2Xml.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The source file [{0}] does not exist!.
+        /// </summary>
+        public static string Error_SourceFileDoesNotExist {
+            get {
+                return ResourceManager.GetString("Error_SourceFileDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The command [{0}|{1}]. i.e. -c {1}.
         /// </summary>
         public static string Switch_CommandDescription {

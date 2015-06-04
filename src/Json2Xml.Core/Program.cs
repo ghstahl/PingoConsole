@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml;
 using Fclp;
 using Json2Xml.Core.IO;
+using Newtonsoft.Json;
 
 namespace Json2Xml.Core
 {
@@ -25,7 +28,7 @@ namespace Json2Xml.Core
         private const int ERROR_INVALID_COMMAND_LINE = 0x667;
 
 
-        public static string CoverageFile;
+        public static string Source;
         public static string Output;
         public static string Command = Wellknown.Json2Xml;
         public static void Main(string[] args)
@@ -52,6 +55,34 @@ namespace Json2Xml.Core
                 Environment.ExitCode = ERROR_BAD_ARGUMENTS;
             }
 
+            ProcessCommand();
+
+
+        }
+
+        /*
+         *
+         
+        -s "H:\MyNugets\test.json"   -o "H:\MyNugets\test.nuspec" -c Json2Xml
+        -s "H:\MyNugets\package.nuspec" -o "H:\MyNugets\test.json"   -c Xml2Json
+ 
+         * 
+         */
+        private static void ProcessCommand()
+        {
+            if (System.String.Compare(Command, Wellknown.Json2Xml, System.StringComparison.OrdinalIgnoreCase) == 0)
+            {
+                var json  = File.ReadAllText(Source);
+                var doc = JsonConvert.DeserializeXmlNode(json);
+                doc.Save(Output);
+            }
+            if (System.String.Compare(Command, Wellknown.Xml2Json, System.StringComparison.OrdinalIgnoreCase) == 0)
+            {
+                var doc = new XmlDocument();
+                doc.Load(Source);
+                string jsonText = JsonConvert.SerializeXmlNode(doc);
+                File.WriteAllText(Output,jsonText);
+            }
         }
 
         static bool ValidateArguments()
@@ -61,7 +92,12 @@ namespace Json2Xml.Core
             {
                 DoConsoleErrorColor(() => Console.WriteLine(Json2Xml.Resources.Common.Error_OutputFileCanNotBeCreated, Output));
             }
-            
+
+            if (!File.Exists(Source))
+            {
+                DoConsoleErrorColor(() => Console.WriteLine(Json2Xml.Resources.Common.Error_SourceFileDoesNotExist, Source));
+            }
+
             return valid;
         }
         static ICommandLineParserResult ProcessArguments(this FluentCommandLineParser p, string[] args)
@@ -69,7 +105,7 @@ namespace Json2Xml.Core
 
             // Source Switch
             p.Setup<string>(Json2Xml.Resources.Common.Switch_SourceShort[0], Json2Xml.Resources.Common.Switch_SourceLong)
-                .Callback(value => CoverageFile = value)
+                .Callback(value => Source = value)
                 .Required()
                 .WithDescription(Json2Xml.Resources.Common.Switch_SourceDescription);
 

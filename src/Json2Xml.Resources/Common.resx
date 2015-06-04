@@ -120,6 +120,9 @@
   <data name="Error_OutputFileCanNotBeCreated" xml:space="preserve">
     <value>The output file [{0}] cannot be created!</value>
   </data>
+  <data name="Error_SourceFileDoesNotExist" xml:space="preserve">
+    <value>The source file [{0}] does not exist!</value>
+  </data>
   <data name="Switch_CommandDescription" xml:space="preserve">
     <value>The command [{0}|{1}]. i.e. -c {1}</value>
   </data>
