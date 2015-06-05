@@ -138,6 +138,9 @@
   <data name="Switch_CommandShort" xml:space="preserve">
     <value>c</value>
   </data>
+  <data name="Switch_CommandTemplateDescription" xml:space="preserve">
+    <value />
+  </data>
   <data name="Switch_OutputDescription" xml:space="preserve">
     <value>Path to the output file. i.e. -o c:\Temp\out.nuspec</value>
   </data>

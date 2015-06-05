@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Json2Xml.Core.Validation
+namespace Pingo.CommandLine.Validation
 {
     /// <summary>
     ///  Represents all the information gained from the result of a validation operation.

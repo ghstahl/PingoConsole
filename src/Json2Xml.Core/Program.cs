@@ -5,15 +5,12 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Resources;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Xml;
-using Fclp;
 using Json2Xml.Core.CommandLine;
-using Json2Xml.Core.IO;
-using Json2Xml.Core.Validation;
-using Newtonsoft.Json;
+using Json2Xml.Core.Executables;
+using Pingo.CommandLine.Execute;
+using Pingo.CommandLine.IO;
+using Pingo.CommandLine.Validation;
 
 namespace Json2Xml.Core
 {
@@ -51,16 +48,55 @@ namespace Json2Xml.Core
                 return;
             }
 
-            try
+            var executables = BuildExecutables();
+            var executablesResult = executables.Execute();
+
+            foreach (var executableResult in executablesResult)
             {
-                ProcessCommand();
-            }
-            catch (Exception e)
-            {
-                
+                if (executableResult.HasErrors)
+                {
+                    ConsoleHelper.DoConsoleErrorColor(() => Console.WriteLine("Failed : {0} : {1}"
+                        , executableResult.Name, executableResult.ErrorText));
+                }
+                else
+                {
+                    ConsoleHelper.DoConsoleSuccessColor(() => Console.WriteLine("Succeeded : {0} "
+                        , executableResult.Name));
+                }
             }
 
-            ConsoleHelper.DoConsoleSuccessColor(() => Console.WriteLine(Json2Xml.Resources.Common.Success));
+        }
+
+
+        private static IEnumerable<IExecutable> BuildExecutables()
+        {
+            var executables = new List<IExecutable>();
+            switch (Parser.ConversionType)
+            {
+                case Wellknown.ConversionType.Json2Xml:
+                {
+                    var executable = new Json2XmlExecutable {Source = Parser.Source, Output = Parser.Output};
+                    executables.Add(executable);
+                }
+                    break;
+                case Wellknown.ConversionType.Xml2Json:
+                {
+                    var executable = new Xml2JsonExecutable {Source = Parser.Source, Output = Parser.Output};
+                    executables.Add(executable);
+                }
+                    break;
+            }
+            return executables;
+        }
+
+        private static IEnumerable<IExecuteResult> Execute(this IEnumerable<IExecutable> executables)
+        {
+            var executeResults = new List<IExecuteResult>();
+            foreach (var executable in executables)
+            {
+                executeResults.Add(executable.Execute());
+            }
+            return executeResults;
         }
 
         /*
@@ -71,32 +107,15 @@ namespace Json2Xml.Core
  
          * 
          */
-        private static void ProcessCommand()
-        {
-            if (System.String.Compare(Parser.Command, Wellknown.Json2Xml, System.StringComparison.OrdinalIgnoreCase) == 0)
-            {
-                var json = File.ReadAllText(Parser.Source);
-                var doc = JsonConvert.DeserializeXmlNode(json);
-                doc.Save(Parser.Output);
-            }
-            if (System.String.Compare(Parser.Command, Wellknown.Xml2Json, System.StringComparison.OrdinalIgnoreCase) == 0)
-            {
-                var doc = new XmlDocument();
-                doc.Load(Parser.Source);
-                string jsonText = JsonConvert.SerializeXmlNode(doc);
-                File.WriteAllText(Parser.Output, jsonText);
-            }
-        }
 
         static IValidateArgumentsResult ValidateArguments()
         {
             var result = new ValidateArgumentsResult();
-            var errorList = new List<IValidateArgumentError>();
-            result.Errors = errorList;
+
             bool valid = FileSystem.CanCreate(Parser.Output);
             if (!valid)
             {
-                errorList.Add(new ValidateArgumentError()
+                result.ErrorsStore.Add(new ValidateArgumentError()
                 {
                     ErrorText = string.Format(Json2Xml.Resources.Common.Error_OutputFileCanNotBeCreated, Parser.Output)
                 });
@@ -105,7 +124,7 @@ namespace Json2Xml.Core
 
             if (!File.Exists(Parser.Source))
             {
-                errorList.Add(new ValidateArgumentError()
+                result.ErrorsStore.Add(new ValidateArgumentError()
                 {
                     ErrorText = string.Format(Json2Xml.Resources.Common.Error_SourceFileDoesNotExist, Parser.Source)
                 });

@@ -1,4 +1,4 @@
-namespace Json2Xml.Core.Validation
+namespace Pingo.CommandLine.Validation
 {
     
     /// <summary>

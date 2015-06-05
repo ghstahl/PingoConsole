@@ -1,4 +1,6 @@
-﻿namespace Json2Xml.Core
+﻿using System;
+
+namespace Json2Xml.Core
 {
     public class Wellknown
     {
@@ -8,5 +10,12 @@
 
         public const string Json2Xml = "Json2Xml";
         public const string Xml2Json = "Xml2Json";
+
+        [Flags]
+        public enum ConversionType
+        {
+            Json2Xml = 1,
+            Xml2Json = 2,
+        }
     }
 }

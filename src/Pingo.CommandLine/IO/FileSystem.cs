@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 
-namespace Json2Xml.Core.IO
+namespace Pingo.CommandLine.IO
 {
-    static class FileSystem
+    public static class FileSystem
     {
         public static bool CanCreate(string path)
         {
@@ -12,7 +12,9 @@ namespace Json2Xml.Core.IO
             bool canCreate;
             try
             {
-                using (File.Create(file)) { }
+                using (File.Create(file))
+                {
+                }
                 File.Delete(file);
                 canCreate = true;
             }
@@ -22,7 +24,6 @@ namespace Json2Xml.Core.IO
             }
             return canCreate;
         }
-
 
     }
 }

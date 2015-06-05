@@ -124,6 +124,15 @@ namespace Json2Xml.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Switch_CommandTemplateDescription {
+            get {
+                return ResourceManager.GetString("Switch_CommandTemplateDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Path to the output file. i.e. -o c:\Temp\out.nuspec.
         /// </summary>
         public static string Switch_OutputDescription {

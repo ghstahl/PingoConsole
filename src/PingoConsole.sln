@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json2Xml.Resources", "Json2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json2Xml.Core", "Json2Xml.Core\Json2Xml.Core.csproj", "{66281FD1-1316-4A69-A864-C93297F6E87D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine", "Pingo.CommandLine\Pingo.CommandLine.csproj", "{922B1E1D-4053-4E46-BF15-9A174743EF8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{66281FD1-1316-4A69-A864-C93297F6E87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66281FD1-1316-4A69-A864-C93297F6E87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66281FD1-1316-4A69-A864-C93297F6E87D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922B1E1D-4053-4E46-BF15-9A174743EF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922B1E1D-4053-4E46-BF15-9A174743EF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922B1E1D-4053-4E46-BF15-9A174743EF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922B1E1D-4053-4E46-BF15-9A174743EF8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

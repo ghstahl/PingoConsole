@@ -11,7 +11,7 @@ namespace Json2Xml.Core.CommandLine
     {
         public static string Source;
         public static string Output;
-        public static string Command = Wellknown.Json2Xml;
+        public static Wellknown.ConversionType ConversionType;
 
         public static ParserTupleResult ProcessArguments(string[] args)
         {
@@ -31,9 +31,13 @@ namespace Json2Xml.Core.CommandLine
 
             // Command Switch
             var description = string.Format(Json2Xml.Resources.Common.Switch_CommandDescription, Wellknown.Json2Xml, Wellknown.Xml2Json);
-            p.Setup<string>(Json2Xml.Resources.Common.Switch_CommandShort[0], Json2Xml.Resources.Common.Switch_CommandLong)
-                .Callback(value => Command = value)
+            p.Setup<Wellknown.ConversionType>(Json2Xml.Resources.Common.Switch_CommandShort[0], Json2Xml.Resources.Common.Switch_CommandLong)
+                .Callback(value => ConversionType = value)
+                .SetDefault(Wellknown.ConversionType.Json2Xml)
                 .WithDescription(description);
+
+
+            //p.SetupHelp()
 
             var result = p.Parse(args);
 
