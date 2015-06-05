@@ -97,33 +97,6 @@ namespace Json2Xml.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The command [{0}|{1}]. i.e. -c {1}.
-        /// </summary>
-        public static string Switch_CommandDescription {
-            get {
-                return ResourceManager.GetString("Switch_CommandDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Command.
-        /// </summary>
-        public static string Switch_CommandLong {
-            get {
-                return ResourceManager.GetString("Switch_CommandLong", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to c.
-        /// </summary>
-        public static string Switch_CommandShort {
-            get {
-                return ResourceManager.GetString("Switch_CommandShort", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string Switch_CommandTemplateDescription {
@@ -133,7 +106,34 @@ namespace Json2Xml.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Path to the output file. i.e. -o c:\Temp\out.nuspec.
+        ///   Looks up a localized string similar to The conversion type [{0}]. i.e. -{1} {2}.
+        /// </summary>
+        public static string Switch_ConversionTypeDescription {
+            get {
+                return ResourceManager.GetString("Switch_ConversionTypeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conversion.
+        /// </summary>
+        public static string Switch_ConversionTypeLong {
+            get {
+                return ResourceManager.GetString("Switch_ConversionTypeLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to c.
+        /// </summary>
+        public static string Switch_ConversionTypeShort {
+            get {
+                return ResourceManager.GetString("Switch_ConversionTypeShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Path to the output file. i.e. -{0} c:\Temp\out.nuspec.
         /// </summary>
         public static string Switch_OutputDescription {
             get {
@@ -160,7 +160,7 @@ namespace Json2Xml.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Path to the source file [.json|.xml].
+        ///   Looks up a localized string similar to Path to the source file [.json|.xml]. i.e. -{0} c:\Temp\source.json.
         /// </summary>
         public static string Switch_SourceDescription {
             get {

@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\EnumExtensions.cs" />
     <Compile Include="Execute\ExecuteError.cs" />
     <Compile Include="Execute\ExecuteResult.cs" />
     <Compile Include="Execute\IExecutable.cs" />

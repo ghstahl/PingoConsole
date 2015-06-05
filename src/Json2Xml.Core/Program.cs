@@ -41,7 +41,7 @@ namespace Json2Xml.Core
                     ConsoleHelper.DoConsoleErrorColor(() => Console.WriteLine(errors.ErrorText));
                 }
                 Console.WriteLine();
-                tupleResult.Item1.Options.HelpDumpOptions();
+                Parser.HelpDumpOptions();
                 Parser.HelpDumpUsage();
                 Environment.ExitCode = Wellknown.ERROR_BAD_ARGUMENTS;
                 

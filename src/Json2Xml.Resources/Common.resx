@@ -129,20 +129,20 @@
   <data name="Success" xml:space="preserve">
     <value>Success</value>
   </data>
-  <data name="Switch_CommandDescription" xml:space="preserve">
-    <value>The command [{0}|{1}]. i.e. -c {1}</value>
-  </data>
-  <data name="Switch_CommandLong" xml:space="preserve">
-    <value>Command</value>
-  </data>
-  <data name="Switch_CommandShort" xml:space="preserve">
-    <value>c</value>
-  </data>
   <data name="Switch_CommandTemplateDescription" xml:space="preserve">
     <value />
   </data>
+  <data name="Switch_ConversionTypeDescription" xml:space="preserve">
+    <value>The conversion type [{0}]. i.e. -{1} {2}</value>
+  </data>
+  <data name="Switch_ConversionTypeLong" xml:space="preserve">
+    <value>Conversion</value>
+  </data>
+  <data name="Switch_ConversionTypeShort" xml:space="preserve">
+    <value>c</value>
+  </data>
   <data name="Switch_OutputDescription" xml:space="preserve">
-    <value>Path to the output file. i.e. -o c:\Temp\out.nuspec</value>
+    <value>Path to the output file. i.e. -{0} c:\Temp\out.nuspec</value>
   </data>
   <data name="Switch_OutputLong" xml:space="preserve">
     <value>Output</value>
@@ -151,7 +151,7 @@
     <value>o</value>
   </data>
   <data name="Switch_SourceDescription" xml:space="preserve">
-    <value>Path to the source file [.json|.xml]</value>
+    <value>Path to the source file [.json|.xml]. i.e. -{0} c:\Temp\source.json</value>
   </data>
   <data name="Switch_SourceLong" xml:space="preserve">
     <value>Source</value>

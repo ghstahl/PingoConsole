@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Fclp;
 using Fclp.Internals;
+using Pingo.CommandLine.Enum;
 using ParserTupleResult = System.Tuple<Fclp.FluentCommandLineParser, Fclp.ICommandLineParserResult>;
 
 namespace Json2Xml.Core.CommandLine
@@ -9,35 +10,53 @@ namespace Json2Xml.Core.CommandLine
 
     public static class Parser
     {
+        private static FluentCommandLineParser _fluentCommandLineParser;
+        public static FluentCommandLineParser FluentCommandLineParser
+        {
+            get { return _fluentCommandLineParser ?? (_fluentCommandLineParser = new FluentCommandLineParser()); }
+        }
+
         public static string Source;
         public static string Output;
         public static Wellknown.ConversionType ConversionType;
 
         public static ParserTupleResult ProcessArguments(string[] args)
         {
-            var p = new FluentCommandLineParser();
+            var p = FluentCommandLineParser;
 
-            p.Setup<string>(Json2Xml.Resources.Common.Switch_SourceShort[0], Json2Xml.Resources.Common.Switch_SourceLong)
+            // Source Switch
+            var description = string.Format(Json2Xml.Resources.Common.Switch_SourceDescription,
+                Json2Xml.Resources.Common.Switch_SourceShort);
+            FluentCommandLineParser.Setup<string>(Json2Xml.Resources.Common.Switch_SourceShort[0], Json2Xml.Resources.Common.Switch_SourceLong)
                 .Callback(value => Source = value)
                 .Required()
-                .WithDescription(Json2Xml.Resources.Common.Switch_SourceDescription);
+                .WithDescription(description);
 
             // Output Switch
+            description = string.Format(Json2Xml.Resources.Common.Switch_OutputDescription,
+              Json2Xml.Resources.Common.Switch_OutputShort);
             p.Setup<string>(Json2Xml.Resources.Common.Switch_OutputShort[0], Json2Xml.Resources.Common.Switch_OutputLong)
-               .Callback(value => Output = value)
-               .Required()
-               .WithDescription(Json2Xml.Resources.Common.Switch_OutputDescription);
-
-
-            // Command Switch
-            var description = string.Format(Json2Xml.Resources.Common.Switch_CommandDescription, Wellknown.Json2Xml, Wellknown.Xml2Json);
-            p.Setup<Wellknown.ConversionType>(Json2Xml.Resources.Common.Switch_CommandShort[0], Json2Xml.Resources.Common.Switch_CommandLong)
-                .Callback(value => ConversionType = value)
-                .SetDefault(Wellknown.ConversionType.Json2Xml)
+                .Callback(value => Output = value)
+                .Required()
                 .WithDescription(description);
 
 
-            //p.SetupHelp()
+            // ConversionType Switch
+            description = string.Format(Json2Xml.Resources.Common.Switch_ConversionTypeDescription,
+                typeof (Wellknown.ConversionType).ToBangEnum(),
+                Json2Xml.Resources.Common.Switch_ConversionTypeShort,
+                typeof(Wellknown.ConversionType).ToFirstEnum());
+
+            p.Setup<Wellknown.ConversionType>(Json2Xml.Resources.Common.Switch_ConversionTypeShort[0],
+                Json2Xml.Resources.Common.Switch_ConversionTypeLong)
+                .Callback(value => ConversionType = value)
+                .Required()
+                .WithDescription(description);
+
+
+            // sets up the parser to execute the callback when -? or --help is detected
+            p.SetupHelp("?", "help")
+                .Callback(text => Console.WriteLine(text));
 
             var result = p.Parse(args);
 
@@ -51,41 +70,17 @@ namespace Json2Xml.Core.CommandLine
             ConsoleHelper.DoConsoleErrorColor(() => Console.WriteLine(tupleResult.Item2.ErrorText));
 
             // dump information.
-            tupleResult.Item1.Options.HelpDumpOptions();
+            HelpDumpOptions();
             HelpDumpUsage();
             Environment.ExitCode = Wellknown.ERROR_BAD_ARGUMENTS;
         }
 
-        public static void HelpDumpOptions(this List<ICommandLineOption> options)
+        public static void HelpDumpOptions( )
         {
-            foreach (var option in options)
-            {
-                option.HelpDumpOption();
-                Console.WriteLine();
-            }
+            // triggers the SetupHelp Callback which writes the text to the console
+            FluentCommandLineParser.HelpOption.ShowHelp(FluentCommandLineParser.Options);
         }
 
-        public static void HelpDumpOption(this ICommandLineOption commandLineOption)
-        {
-            Console.WriteLine(string.Format("Description: {0}", commandLineOption.Description));
-
-            var command = "[";
-            if (commandLineOption.HasShortName)
-            {
-                command += "-" + commandLineOption.ShortName;
-            }
-            if (commandLineOption.HasShortName && commandLineOption.HasLongName)
-            {
-                command += "|";
-            }
-            if (commandLineOption.HasLongName)
-            {
-                command += "--" + commandLineOption.LongName;
-            }
-            command += "]";
-
-            Console.WriteLine(string.Format("    Command:{0}", command));
-        }
 
         public static void HelpDumpUsage()
         {
