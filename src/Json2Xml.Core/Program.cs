@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text;
@@ -11,55 +10,57 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using Fclp;
+using Json2Xml.Core.CommandLine;
 using Json2Xml.Core.IO;
+using Json2Xml.Core.Validation;
 using Newtonsoft.Json;
 
 namespace Json2Xml.Core
 {
-    public class Wellknown
-    {
-        public const string Json2Xml = "Json2Xml";
-        public const string Xml2Json = "Xml2Json";
-    }
     public static class Program
     {
-        private const int ERROR_BAD_ARGUMENTS = 0xA0;
-        private const int ERROR_ARITHMETIC_OVERFLOW = 0x216;
-        private const int ERROR_INVALID_COMMAND_LINE = 0x667;
 
 
-        public static string Source;
-        public static string Output;
-        public static string Command = Wellknown.Json2Xml;
+       
         public static void Main(string[] args)
         {
             DumpWelcomeHeader();
             DumpAssemblyInfo();
             Console.WriteLine();
 
-            var p = new FluentCommandLineParser();
-            var pResult = p.ProcessArguments(args);
-            if (pResult.HasErrors)
-            {
-                DoConsoleErrorColor(() => Console.WriteLine(pResult.ErrorText));
+            var tupleResult = CommandLine.Parser.ProcessArguments(args);
 
-                // dump information.
-                p.Options.HelpDumpOptions();
-                ParserHelp.HelpDumpUsage();
-                Environment.ExitCode = ERROR_BAD_ARGUMENTS;
+            if (tupleResult.Item2.HasErrors)
+            {
+                tupleResult.DumpErrorOutput();
                 return;
             }
-            if (!ValidateArguments())
+            var resultValidateArguments = ValidateArguments();
+            if (resultValidateArguments.HasErrors)
             {
-                p.Options.HelpDumpOptions();
-                ParserHelp.HelpDumpUsage();
-                Environment.ExitCode = ERROR_BAD_ARGUMENTS;
+                ConsoleHelper.DoConsoleErrorColor(() => Console.WriteLine(resultValidateArguments.ErrorText));
+                foreach (var errors in resultValidateArguments.Errors)
+                {
+                    ConsoleHelper.DoConsoleErrorColor(() => Console.WriteLine(errors.ErrorText));
+                }
+                Console.WriteLine();
+                tupleResult.Item1.Options.HelpDumpOptions();
+                Parser.HelpDumpUsage();
+                Environment.ExitCode = Wellknown.ERROR_BAD_ARGUMENTS;
+                
                 return;
             }
 
-            ProcessCommand();
+            try
+            {
+                ProcessCommand();
+            }
+            catch (Exception e)
+            {
+                
+            }
 
-
+            ConsoleHelper.DoConsoleSuccessColor(() => Console.WriteLine(Json2Xml.Resources.Common.Success));
         }
 
         /*
@@ -72,60 +73,53 @@ namespace Json2Xml.Core
          */
         private static void ProcessCommand()
         {
-            if (System.String.Compare(Command, Wellknown.Json2Xml, System.StringComparison.OrdinalIgnoreCase) == 0)
+            if (System.String.Compare(Parser.Command, Wellknown.Json2Xml, System.StringComparison.OrdinalIgnoreCase) == 0)
             {
-                var json  = File.ReadAllText(Source);
+                var json = File.ReadAllText(Parser.Source);
                 var doc = JsonConvert.DeserializeXmlNode(json);
-                doc.Save(Output);
+                doc.Save(Parser.Output);
             }
-            if (System.String.Compare(Command, Wellknown.Xml2Json, System.StringComparison.OrdinalIgnoreCase) == 0)
+            if (System.String.Compare(Parser.Command, Wellknown.Xml2Json, System.StringComparison.OrdinalIgnoreCase) == 0)
             {
                 var doc = new XmlDocument();
-                doc.Load(Source);
+                doc.Load(Parser.Source);
                 string jsonText = JsonConvert.SerializeXmlNode(doc);
-                File.WriteAllText(Output,jsonText);
+                File.WriteAllText(Parser.Output, jsonText);
             }
         }
 
-        static bool ValidateArguments()
+        static IValidateArgumentsResult ValidateArguments()
         {
-            bool valid = FileSystem.CanCreate(Output);
+            var result = new ValidateArgumentsResult();
+            var errorList = new List<IValidateArgumentError>();
+            result.Errors = errorList;
+            bool valid = FileSystem.CanCreate(Parser.Output);
             if (!valid)
             {
-                DoConsoleErrorColor(() => Console.WriteLine(Json2Xml.Resources.Common.Error_OutputFileCanNotBeCreated, Output));
-            }
-
-            if (!File.Exists(Source))
-            {
-                DoConsoleErrorColor(() => Console.WriteLine(Json2Xml.Resources.Common.Error_SourceFileDoesNotExist, Source));
-            }
-
-            return valid;
-        }
-        static ICommandLineParserResult ProcessArguments(this FluentCommandLineParser p, string[] args)
-        {
-
-            // Source Switch
-            p.Setup<string>(Json2Xml.Resources.Common.Switch_SourceShort[0], Json2Xml.Resources.Common.Switch_SourceLong)
-                .Callback(value => Source = value)
-                .Required()
-                .WithDescription(Json2Xml.Resources.Common.Switch_SourceDescription);
-
-            // Output Switch
-            p.Setup<string>(Json2Xml.Resources.Common.Switch_OutputShort[0], Json2Xml.Resources.Common.Switch_OutputLong)
-               .Callback(value => Output = value)
-               .Required()
-               .WithDescription(Json2Xml.Resources.Common.Switch_OutputDescription);
-
-
-            // Command Switch
-            var description = string.Format(Json2Xml.Resources.Common.Switch_CommandDescription, Wellknown.Json2Xml, Wellknown.Xml2Json);
-            p.Setup<string>(Json2Xml.Resources.Common.Switch_CommandShort[0], Json2Xml.Resources.Common.Switch_CommandLong)
-                .Callback(value => Command = value)
-                .WithDescription(description);
+                errorList.Add(new ValidateArgumentError()
+                {
+                    ErrorText = string.Format(Json2Xml.Resources.Common.Error_OutputFileCanNotBeCreated, Parser.Output)
+                });
             
-            return  p.Parse(args);
+            }
+
+            if (!File.Exists(Parser.Source))
+            {
+                errorList.Add(new ValidateArgumentError()
+                {
+                    ErrorText = string.Format(Json2Xml.Resources.Common.Error_SourceFileDoesNotExist, Parser.Source)
+                });
+            }
+
+            if (result.HasErrors)
+            {
+                result.ErrorText = Json2Xml.Resources.Common.Error_ValidateArgumentsSummary;
+            }
+            return result;
         }
+
+
+      
 
         private static void DumpAssemblyInfo()
         {
@@ -157,20 +151,5 @@ namespace Json2Xml.Core
             }
             Console.WriteLine("");
         }
-
-        private static void DoConsoleErrorColor(Action action)
-        {
-            try
-            {
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.White;
-                action();
-            }
-            finally
-            {
-                Console.ResetColor();
-            }
-        }
-     
     }
 }

@@ -79,6 +79,24 @@ namespace Json2Xml.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There were errors when validating arguments.
+        /// </summary>
+        public static string Error_ValidateArgumentsSummary {
+            get {
+                return ResourceManager.GetString("Error_ValidateArgumentsSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success.
+        /// </summary>
+        public static string Success {
+            get {
+                return ResourceManager.GetString("Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The command [{0}|{1}]. i.e. -c {1}.
         /// </summary>
         public static string Switch_CommandDescription {
