@@ -56,7 +56,10 @@ namespace Json2Xml.Core.CommandLine
 
             // sets up the parser to execute the callback when -? or --help is detected
             p.SetupHelp("?", "help")
-                .Callback(text => Console.WriteLine(text));
+                .Callback(text =>
+                {
+                    Console.WriteLine(text);
+                });
 
             var result = p.Parse(args);
 
@@ -78,7 +81,7 @@ namespace Json2Xml.Core.CommandLine
         public static void HelpDumpOptions( )
         {
             // triggers the SetupHelp Callback which writes the text to the console
-            FluentCommandLineParser.HelpOption.ShowHelp(FluentCommandLineParser.Options);
+       //     FluentCommandLineParser.HelpOption.ShowHelp(FluentCommandLineParser.Options);
         }
 
 

@@ -145,13 +145,14 @@ namespace Json2Xml.Core
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             DumpAssemblyInfo(assembly);
             assembly = typeof(Newtonsoft.Json.JsonSerializer).Assembly;
+            Console.WriteLine(assembly.GetName().Name);
             DumpAssemblyInfo(assembly);
         }
         private static void DumpAssemblyInfo(Assembly assembly)
         {
-            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
-            string version = fvi.FileVersion;
-            Console.WriteLine("{0} AssemblyVersion:[{1}] FileVersion:[{2}]", assembly.GetName().Name, assembly.GetName().Version, version);
+       //     FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+       //     string version = fvi.FileVersion;
+            Console.WriteLine("{0} AssemblyVersion:[{1}]", assembly.GetName().Name, assembly.GetName().Version);
         }
         private static void DumpWelcomeHeader()
         {

@@ -53,6 +53,10 @@
     <Compile Include="Executables\Xml2JsonExecutable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Versioning\IntervalNotationVersioning.cs" />
+    <Compile Include="Versioning\NugetVersion.cs" />
+    <Compile Include="Versioning\RangeDisposition.cs" />
+    <Compile Include="Versioning\VersionBinding.cs" />
     <Compile Include="Wellknown.cs" />
   </ItemGroup>
   <ItemGroup>
