@@ -144,9 +144,7 @@ namespace Json2Xml.Core
         {
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             DumpAssemblyInfo(assembly);
-            assembly = typeof(Newtonsoft.Json.JsonSerializer).Assembly;
-            Console.WriteLine(assembly.GetName().Name);
-            DumpAssemblyInfo(assembly);
+            DumpAssemblyInfo(typeof(Newtonsoft.Json.JsonSerializer).Assembly);
         }
         private static void DumpAssemblyInfo(Assembly assembly)
         {
@@ -156,7 +154,7 @@ namespace Json2Xml.Core
         }
         private static void DumpWelcomeHeader()
         {
-            string[] cultureNames = { "en-US", "fr-FR", "ru-RU", "es-ES", "de-DE", "en-US" };
+            string[] cultureNames = { "en-US", "fr-FR", "es-ES", "de-DE", "en-US" };
             var assembly = typeof(Json2Xml.Resources.Common).Assembly;
 
             var rm = new ResourceManager("Json2Xml.Resources.Common", assembly);
@@ -167,7 +165,11 @@ namespace Json2Xml.Core
                 Thread.CurrentThread.CurrentUICulture = culture;
 
                 string welcome = rm.GetString("Welcome");
-                Console.Write("{0} ", welcome);
+
+                Json2Xml.Core.ConsoleHelper.DoConsoleForeGroudRotation(() =>
+                {
+                    Console.Write("{0} ", welcome);
+                });
             }
             Console.WriteLine("");
         }
