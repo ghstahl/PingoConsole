@@ -87,7 +87,7 @@ namespace Json2Xml.Core.CommandLine
 
         public static void HelpDumpUsage()
         {
-            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetEntryAssembly();
             Console.WriteLine("");
             Console.WriteLine("Usage:");
             Console.WriteLine("Template: {0}.exe [-c|--CoverageFile] <path to .coverage file> [-o|--Output] <path to xml file> ", assembly.GetName().Name);

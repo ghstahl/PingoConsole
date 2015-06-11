@@ -17,8 +17,6 @@ namespace Json2Xml.Core
     public static class Program
     {
 
-
-       
         public static void Main(string[] args)
         {
             DumpWelcomeHeader();
@@ -26,10 +24,18 @@ namespace Json2Xml.Core
             Console.WriteLine();
 
             var tupleResult = CommandLine.Parser.ProcessArguments(args);
+            var parser = tupleResult.Item1;
+            var parseResult = tupleResult.Item2;
 
-            if (tupleResult.Item2.HasErrors)
+            if (parseResult.HasErrors)
             {
-                tupleResult.DumpErrorOutput();
+                if (!parseResult.EmptyArgs)
+                {
+                    tupleResult.DumpErrorOutput();
+                }
+                parser.HelpOption.ShowHelp(parser.Options);
+                Parser.HelpDumpOptions();
+                Parser.HelpDumpUsage();
                 return;
             }
             var resultValidateArguments = ValidateArguments();

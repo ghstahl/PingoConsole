@@ -10,15 +10,11 @@ namespace Pingo.CommandLine.Validation
         {
             get { return ErrorsStore; }
         }
-
         public List<IValidateArgumentError> ErrorsStore
         {
             get { return _errors ?? (_errors = new List<IValidateArgumentError>()); }
         }
-            
-
         public string ErrorText { get; set; }
-
         public bool HasErrors
         {
             get { 
