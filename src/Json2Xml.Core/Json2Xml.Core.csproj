@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Help\EnumArgumentSimpleOptionHelpRecord.cs" />
+    <Compile Include="Help\SimpleOptionHelpRecord.cs" />
+    <Compile Include="Help\OptionHelpRecord.cs" />
+    <Compile Include="Help\IOptionHelp.cs" />
+    <Compile Include="Help\OptionHelpExtensions.cs" />
+    <Compile Include="Help\HelpStringHelpers.cs" />
     <Compile Include="CommandLine\Parser.cs" />
     <Compile Include="ConsoleHelper.cs" />
     <Compile Include="Executables\Json2XmlExecutable.cs" />

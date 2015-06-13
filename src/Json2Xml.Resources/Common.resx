@@ -117,6 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArgumentDescription_PathToFile" xml:space="preserve">
+    <value>A full path to a file. i.e. c:\Temp\source.json</value>
+  </data>
+  <data name="ArgumentName_PathToFile" xml:space="preserve">
+    <value>&lt;Path to File&gt;</value>
+  </data>
+  <data name="Breaker_Small" xml:space="preserve">
+    <value>------------------------------------------</value>
+  </data>
+  <data name="Description_Json2Xml" xml:space="preserve">
+    <value>Converts from json to xml,  i.e. json to nuspec</value>
+  </data>
+  <data name="Description_Xml2Json" xml:space="preserve">
+    <value>Converts from XML to json.
+Typically this is done first to get the json into Json.Net
+specific format.</value>
+  </data>
   <data name="Error_OutputFileCanNotBeCreated" xml:space="preserve">
     <value>The output file [{0}] cannot be created!</value>
   </data>
@@ -125,6 +142,30 @@
   </data>
   <data name="Error_ValidateArgumentsSummary" xml:space="preserve">
     <value>There were errors when validating arguments</value>
+  </data>
+  <data name="Format_SmallTitleLine" xml:space="preserve">
+    <value>--------------------- {0} ---------------------</value>
+  </data>
+  <data name="Format_SwitchItem" xml:space="preserve">
+    <value>    {0}</value>
+  </data>
+  <data name="Format_TitleLine" xml:space="preserve">
+    <value>------------------------------------ {0} ------------------------------------</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="OptionDescription_ConverstionType" xml:space="preserve">
+    <value>The type of conversion to be performed.</value>
+  </data>
+  <data name="OptionDescription_Help" xml:space="preserve">
+    <value>Displays help</value>
+  </data>
+  <data name="OptionDescription_Output" xml:space="preserve">
+    <value>The path to the output file as result of the conversion.</value>
+  </data>
+  <data name="OptionDescription_Source" xml:space="preserve">
+    <value>The path to the source file to be converted.  </value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>Success</value>
@@ -141,6 +182,12 @@
   <data name="Switch_ConversionTypeShort" xml:space="preserve">
     <value>c</value>
   </data>
+  <data name="Switch_HelpLong" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Switch_HelpShort" xml:space="preserve">
+    <value>?</value>
+  </data>
   <data name="Switch_OutputDescription" xml:space="preserve">
     <value>Path to the output file. i.e. -{0} c:\Temp\out.nuspec</value>
   </data>
@@ -150,6 +197,12 @@
   <data name="Switch_OutputShort" xml:space="preserve">
     <value>o</value>
   </data>
+  <data name="Switch_SilentLong" xml:space="preserve">
+    <value>Silent</value>
+  </data>
+  <data name="Switch_SilentShort" xml:space="preserve">
+    <value>si</value>
+  </data>
   <data name="Switch_SourceDescription" xml:space="preserve">
     <value>Path to the source file [.json|.xml]. i.e. -{0} c:\Temp\source.json</value>
   </data>
@@ -158,6 +211,28 @@
   </data>
   <data name="Switch_SourceShort" xml:space="preserve">
     <value>s</value>
+  </data>
+  <data name="Title_Argument" xml:space="preserve">
+    <value>Argument: {0}</value>
+  </data>
+  <data name="Title_Arguments" xml:space="preserve">
+    <value>Arguments:</value>
+  </data>
+  <data name="Title_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="Title_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Title_Switches" xml:space="preserve">
+    <value>Switchs:</value>
+  </data>
+  <data name="Title_Usage" xml:space="preserve">
+    <value>Usage:</value>
+  </data>
+  <data name="Usage" xml:space="preserve">
+    <value>Json2Xml -c Xml2Json --Source c:\Folder\a.xml --Output c:\Folder2\b.json
+Json2Xml --Conversion Json2Xml /Source c:\Folder2\b.json -o c:\Folder\c.nuspec</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>

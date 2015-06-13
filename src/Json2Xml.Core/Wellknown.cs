@@ -2,11 +2,18 @@
 
 namespace Json2Xml.Core
 {
-    public class Wellknown
+    public static class Wellknown
     {
-        public const int ERROR_BAD_ARGUMENTS = 0xA0;
-        public const int ERROR_ARITHMETIC_OVERFLOW = 0x216;
-        public const int ERROR_INVALID_COMMAND_LINE = 0x667;
+        public enum ReturnCodes
+        {
+            Success = 0,
+            PartialSuccess = 1,
+            BadArguments = 2,
+            SourceNotValid = 3,
+            OutputNotValid = 4,
+
+        }
+
 
         public const string Json2Xml = "Json2Xml";
         public const string Xml2Json = "Xml2Json";

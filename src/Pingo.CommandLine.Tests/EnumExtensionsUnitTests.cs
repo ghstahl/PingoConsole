@@ -33,28 +33,25 @@ namespace Pingo.CommandLine.Tests
         public void TestBang()
         {
 
-            var result = typeof(AnEmptyEnum).ToBangEnum();
+            var result = typeof(AnEmptyEnum).ToSeparatorEnum('|');
             Assert.IsTrue(string.IsNullOrWhiteSpace(result));
 
-            result = typeof(TwoEntry).ToBangEnum();
+            result = typeof(TwoEntry).ToSeparatorEnum('|');
             Assert.IsTrue(0 == System.String.Compare(result, "One|Two", System.StringComparison.OrdinalIgnoreCase));
 
-            result = typeof(OneEntry).ToBangEnum();
+            result = typeof(OneEntry).ToSeparatorEnum('|');
             Assert.IsTrue(0 == System.String.Compare(result, "One", System.StringComparison.OrdinalIgnoreCase));
         }
 
         [TestMethod]
         public void TestToFirstEnum()
         {
-            ThrowsAssert.Throws(() =>
-            {
-                typeof(AnEmptyEnum).ToFirstEnum();
-            });
+            ThrowsAssert.Throws(() => typeof(AnEmptyEnum).FirstEnum());
 
-            var result = typeof(TwoEntry).ToFirstEnum();
+            var result = typeof (TwoEntry).FirstEnum().ToString();
             Assert.IsTrue(0 == System.String.Compare(result, "One", System.StringComparison.OrdinalIgnoreCase));
 
-            result = typeof(OneEntry).ToFirstEnum();
+            result = typeof(OneEntry).FirstEnum().ToString();
             Assert.IsTrue(0 == System.String.Compare(result, "One", System.StringComparison.OrdinalIgnoreCase));
         }
     }

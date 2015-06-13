@@ -17,15 +17,29 @@ namespace Json2Xml.Core
     public static class Program
     {
 
+        /*
+         * 
+         -s "d:\MyNugets\test.json"   -o "d:\MyNugets\test.nuspec" -c Json2Xml
+         * 
+         * 
+         */
         public static void Main(string[] args)
         {
-            DumpWelcomeHeader();
+            WriteWelcomeHeader();
             DumpAssemblyInfo();
             Console.WriteLine();
 
             var tupleResult = CommandLine.Parser.ProcessArguments(args);
             var parser = tupleResult.Item1;
             var parseResult = tupleResult.Item2;
+
+            if (Parser.ShouldShowHelp())
+            {
+                Parser.WriteHelp();
+                Parser.WriteHelpUsage();
+                Environment.ExitCode = (int)Wellknown.ReturnCodes.PartialSuccess;
+                return;
+            }
 
             if (parseResult.HasErrors)
             {
@@ -34,8 +48,8 @@ namespace Json2Xml.Core
                     tupleResult.DumpErrorOutput();
                 }
                 parser.HelpOption.ShowHelp(parser.Options);
-                Parser.HelpDumpOptions();
-                Parser.HelpDumpUsage();
+                Parser.WriteHelp();
+                Parser.WriteHelpUsage();
                 return;
             }
             var resultValidateArguments = ValidateArguments();
@@ -47,9 +61,9 @@ namespace Json2Xml.Core
                     ConsoleHelper.DoConsoleErrorColor(() => Console.WriteLine(errors.ErrorText));
                 }
                 Console.WriteLine();
-                Parser.HelpDumpOptions();
-                Parser.HelpDumpUsage();
-                Environment.ExitCode = Wellknown.ERROR_BAD_ARGUMENTS;
+                Parser.WriteHelp();
+                Parser.WriteHelpUsage();
+                Environment.ExitCode = (int)Wellknown.ReturnCodes.BadArguments;
                 
                 return;
             }
@@ -158,7 +172,7 @@ namespace Json2Xml.Core
        //     string version = fvi.FileVersion;
             Console.WriteLine("{0} AssemblyVersion:[{1}]", assembly.GetName().Name, assembly.GetName().Version);
         }
-        private static void DumpWelcomeHeader()
+        private static void WriteWelcomeHeader()
         {
             string[] cultureNames = { "en-US", "fr-FR", "es-ES", "de-DE", "en-US" };
             var assembly = typeof(Json2Xml.Resources.Common).Assembly;

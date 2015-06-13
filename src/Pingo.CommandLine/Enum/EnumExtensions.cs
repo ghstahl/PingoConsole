@@ -4,22 +4,32 @@ namespace Pingo.CommandLine.Enum
 {
     public static class EnumExtensions
     {
-        public static string ToBangEnum<T>(this T type) where T : Type
+        public static string ToSeparatorEnum<T>(this T type, char separator) where T : Type
         {
+            type.ValidateIsEnum();
             string enumValues = "";
             foreach (var value in System.Enum.GetValues(type))
             {
-                enumValues += (value.ToString()) + "|";
+                enumValues += (value.ToString()) + separator;
             }
-            enumValues = enumValues.TrimEnd('|');
+            enumValues = enumValues.TrimEnd(separator);
             return enumValues;
         }
 
-        public static string ToFirstEnum<T>(this T type) where T : Type
+        public static void ValidateIsEnum(this Type type) 
         {
+            if (!type.IsEnum)
+            {
+                throw new ArgumentException("T must be an enumerated type");
+            }
+
+        }
+        public static object FirstEnum<T>(this T type) where T : Type
+        {
+            type.ValidateIsEnum();
             var enumArrays = System.Enum.GetValues(type);
             var first = enumArrays.GetValue(0);
-            return first.ToString();
+            return first;
         }
     }
 }

@@ -61,6 +61,53 @@ namespace Json2Xml.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A full path to a file. i.e. c:\Temp\source.json.
+        /// </summary>
+        public static string ArgumentDescription_PathToFile {
+            get {
+                return ResourceManager.GetString("ArgumentDescription_PathToFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;Path to File&gt;.
+        /// </summary>
+        public static string ArgumentName_PathToFile {
+            get {
+                return ResourceManager.GetString("ArgumentName_PathToFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ------------------------------------------.
+        /// </summary>
+        public static string Breaker_Small {
+            get {
+                return ResourceManager.GetString("Breaker_Small", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Converts from json to xml,  i.e. json to nuspec.
+        /// </summary>
+        public static string Description_Json2Xml {
+            get {
+                return ResourceManager.GetString("Description_Json2Xml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Converts from XML to json.
+        ///Typically this is done first to get the json into Json.Net
+        ///specific format..
+        /// </summary>
+        public static string Description_Xml2Json {
+            get {
+                return ResourceManager.GetString("Description_Xml2Json", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The output file [{0}] cannot be created!.
         /// </summary>
         public static string Error_OutputFileCanNotBeCreated {
@@ -84,6 +131,78 @@ namespace Json2Xml.Resources {
         public static string Error_ValidateArgumentsSummary {
             get {
                 return ResourceManager.GetString("Error_ValidateArgumentsSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --------------------- {0} ---------------------.
+        /// </summary>
+        public static string Format_SmallTitleLine {
+            get {
+                return ResourceManager.GetString("Format_SmallTitleLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to     {0}.
+        /// </summary>
+        public static string Format_SwitchItem {
+            get {
+                return ResourceManager.GetString("Format_SwitchItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ------------------------------------ {0} ------------------------------------.
+        /// </summary>
+        public static string Format_TitleLine {
+            get {
+                return ResourceManager.GetString("Format_TitleLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string None {
+            get {
+                return ResourceManager.GetString("None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The type of conversion to be performed..
+        /// </summary>
+        public static string OptionDescription_ConverstionType {
+            get {
+                return ResourceManager.GetString("OptionDescription_ConverstionType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Displays help.
+        /// </summary>
+        public static string OptionDescription_Help {
+            get {
+                return ResourceManager.GetString("OptionDescription_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The path to the output file as result of the conversion..
+        /// </summary>
+        public static string OptionDescription_Output {
+            get {
+                return ResourceManager.GetString("OptionDescription_Output", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The path to the source file to be converted.  .
+        /// </summary>
+        public static string OptionDescription_Source {
+            get {
+                return ResourceManager.GetString("OptionDescription_Source", resourceCulture);
             }
         }
         
@@ -133,6 +252,24 @@ namespace Json2Xml.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string Switch_HelpLong {
+            get {
+                return ResourceManager.GetString("Switch_HelpLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?.
+        /// </summary>
+        public static string Switch_HelpShort {
+            get {
+                return ResourceManager.GetString("Switch_HelpShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Path to the output file. i.e. -{0} c:\Temp\out.nuspec.
         /// </summary>
         public static string Switch_OutputDescription {
@@ -160,6 +297,24 @@ namespace Json2Xml.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Silent.
+        /// </summary>
+        public static string Switch_SilentLong {
+            get {
+                return ResourceManager.GetString("Switch_SilentLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to si.
+        /// </summary>
+        public static string Switch_SilentShort {
+            get {
+                return ResourceManager.GetString("Switch_SilentShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Path to the source file [.json|.xml]. i.e. -{0} c:\Temp\source.json.
         /// </summary>
         public static string Switch_SourceDescription {
@@ -183,6 +338,70 @@ namespace Json2Xml.Resources {
         public static string Switch_SourceShort {
             get {
                 return ResourceManager.GetString("Switch_SourceShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Argument: {0}.
+        /// </summary>
+        public static string Title_Argument {
+            get {
+                return ResourceManager.GetString("Title_Argument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arguments:.
+        /// </summary>
+        public static string Title_Arguments {
+            get {
+                return ResourceManager.GetString("Title_Arguments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description:.
+        /// </summary>
+        public static string Title_Description {
+            get {
+                return ResourceManager.GetString("Title_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string Title_Help {
+            get {
+                return ResourceManager.GetString("Title_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switchs:.
+        /// </summary>
+        public static string Title_Switches {
+            get {
+                return ResourceManager.GetString("Title_Switches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:.
+        /// </summary>
+        public static string Title_Usage {
+            get {
+                return ResourceManager.GetString("Title_Usage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Json2Xml -c Xml2Json --Source c:\Folder\a.xml --Output c:\Folder2\b.json
+        ///Json2Xml --Conversion Json2Xml /Source c:\Folder2\b.json -o c:\Folder\c.nuspec.
+        /// </summary>
+        public static string Usage {
+            get {
+                return ResourceManager.GetString("Usage", resourceCulture);
             }
         }
         
