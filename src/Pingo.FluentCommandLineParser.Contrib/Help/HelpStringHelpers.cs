@@ -1,4 +1,4 @@
-namespace Json2Xml.Core.Help
+namespace Pingo.FluentCommandLineParser.Contrib.Help
 {
     public static class HelpStringHelpers
     {

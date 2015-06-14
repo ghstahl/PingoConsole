@@ -2,15 +2,15 @@
 using Fclp.Internals;
 using Pingo.CommandLine.String;
 
-namespace Json2Xml.Core.Help
+namespace Pingo.FluentCommandLineParser.Contrib.Help
 {
     public static class OptionHelpExtensions
     {
-        public static string SwitchHeader(this ICommandLineOption option)
+        public static string SwitchHeader(this ICommandLineOption option, string title)
         {
             string output = "";
             // switches.
-            output += Json2Xml.Resources.Common.Title_Switches;
+            output += title;
             output += Environment.NewLine;
             if (option.HasShortName)
             {

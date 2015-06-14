@@ -4,9 +4,10 @@ using System.Linq;
 using System.Security.Cryptography;
 using Fclp;
 using Fclp.Internals;
-using Json2Xml.Core.Help;
 using Pingo.CommandLine.Enum;
+using Pingo.FluentCommandLineParser.Contrib.Help;
 using ParserTupleResult = System.Tuple<Fclp.FluentCommandLineParser, Fclp.ICommandLineParserResult>;
+using SimpleOptionHelpRecord = Json2Xml.Core.Help.SimpleOptionHelpRecord;
 
 namespace Json2Xml.Core.CommandLine
 {
@@ -85,7 +86,7 @@ namespace Json2Xml.Core.CommandLine
                 .Required()
                 .WithDescription(Json2Xml.Resources.Common.OptionDescription_ConverstionType);
 
-            var enumArgumentSimpleOptionHelpRecord = new EnumArgumentSimpleOptionHelpRecord<Wellknown.ConversionType>((ICommandLineOption)conversionOption);
+            var enumArgumentSimpleOptionHelpRecord = new Help.EnumArgumentSimpleOptionHelpRecord<Wellknown.ConversionType>((ICommandLineOption)conversionOption);
             enumArgumentSimpleOptionHelpRecord.Add(Wellknown.ConversionType.Json2Xml, Json2Xml.Resources.Common.Description_Json2Xml);
             enumArgumentSimpleOptionHelpRecord.Add(Wellknown.ConversionType.Xml2Json, Json2Xml.Resources.Common.Description_Xml2Json);
 
