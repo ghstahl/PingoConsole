@@ -17,7 +17,7 @@ namespace ConsoleHostForMef
         [MethodImpl(MethodImplOptions.NoInlining)]
         private static void MainCore(string[] args)
         {
-            MEF.ConsoleRunner.Core.Program.MefRunnerEntryPoint(new EntryAssemblyEmbeddedMefAssemblies(), args);
+            Pingo.CommandLine.EntryPoint.Program.MefRunnerEntryPoint(new EntryAssemblyEmbeddedMefAssemblies(), args);
         }
     }
 }

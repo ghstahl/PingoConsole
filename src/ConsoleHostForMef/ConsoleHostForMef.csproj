@@ -53,10 +53,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MEF.ConsoleRunner.Core\MEF.ConsoleRunner.Core.csproj">
-      <Project>{e4a15a61-0cc6-4454-ab32-3994266bd331}</Project>
-      <Name>MEF.ConsoleRunner.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Pingo.CommandLineHelp\Pingo.CommandLineHelp.csproj">
       <Project>{3483c7fe-0661-4268-9035-10ff7e36cd64}</Project>
       <Name>Pingo.CommandLineHelp</Name>
