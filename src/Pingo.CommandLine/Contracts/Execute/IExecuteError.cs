@@ -1,4 +1,4 @@
-namespace Pingo.CommandLine.Execute
+namespace Pingo.CommandLine.Contracts.Execute
 {
     
     /// <summary>

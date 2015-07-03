@@ -25,5 +25,11 @@ namespace Pingo.CommandLine.IO
             return canCreate;
         }
 
+        public static void EnsurePathsExist(string path)
+        {
+            FileInfo fi = new FileInfo(path);
+            Directory.CreateDirectory(fi.Directory.FullName);
+        }
+
     }
 }

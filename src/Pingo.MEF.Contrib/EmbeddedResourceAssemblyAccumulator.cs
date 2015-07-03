@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using Pingo.CommandLine;
 
 namespace Pingo.MEF.Contrib
 {

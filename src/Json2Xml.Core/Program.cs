@@ -8,6 +8,8 @@ using System.Resources;
 using System.Threading;
 using Json2Xml.Core.CommandLine;
 using Json2Xml.Core.Executables;
+using Pingo.CommandLine.ConsoleUtility;
+using Pingo.CommandLine.Contracts.Execute;
 using Pingo.CommandLine.Execute;
 using Pingo.CommandLine.IO;
 using Pingo.CommandLine.Validation;
@@ -186,7 +188,7 @@ namespace Json2Xml.Core
 
                 string welcome = rm.GetString("Welcome");
 
-                Json2Xml.Core.ConsoleHelper.DoConsoleForeGroudRotation(() =>
+                ConsoleHelper.DoConsoleForeGroudRotation(() =>
                 {
                     Console.Write("{0} ", welcome);
                 });

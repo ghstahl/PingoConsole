@@ -30,11 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentCommandLineParser, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentCommandLineParser.1.4.2\lib\net35\FluentCommandLineParser.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,14 +44,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enum\EnumExtensions.cs" />
+    <Compile Include="ArrayUtils\ArrayExtenstions.cs" />
+    <Compile Include="ArrayUtils\ArrayItemDeleter.cs" />
+    <Compile Include="AssemblyUtility\AssemblyExtensions.cs" />
+    <Compile Include="Composite\EntryAssemblyEmbeddedMefAssemblies.cs" />
+    <Compile Include="OptionHelp.cs" />
+    <Compile Include="CommandManager.cs" />
+    <Compile Include="Composite\AssemblyAccumulatorExtensions.cs" />
+    <Compile Include="Composite\EmbeddedResourceAssemblyAccumulator.cs" />
+    <Compile Include="Composite\FileSystemLocalAssemblyAccumulator.cs" />
+    <Compile Include="Contracts\Help\IOptionHelp.cs" />
+    <Compile Include="IO\FileUnblocker.cs" />
+    <Compile Include="Composite\IAssemblyAccumulator.cs" />
+    <Compile Include="Composite\MefImporter.cs" />
+    <Compile Include="ConsoleUtility\ColumnConsolePage.cs" />
+    <Compile Include="ConsoleUtility\ColumnExtensions.cs" />
+    <Compile Include="ConsoleUtility\ConsoleHelper.cs" />
+    <Compile Include="ConsoleUtility\Writer.cs" />
+    <Compile Include="Contracts\Command\ICommand.cs" />
+    <Compile Include="Contracts\Command\ICommandMetaData.cs" />
+    <Compile Include="Contracts\Execute\IExecutable.cs" />
+    <Compile Include="Contracts\Execute\IExecuteError.cs" />
+    <Compile Include="Contracts\Execute\IExecuteResult.cs" />
+    <Compile Include="Contracts\Help\ICommandHelp.cs" />
+    <Compile Include="Contracts\Help\ICommandLineHelp.cs" />
+    <Compile Include="EnumUtility\EnumExtensions.cs" />
     <Compile Include="Execute\ExecuteError.cs" />
     <Compile Include="Execute\ExecuteResult.cs" />
-    <Compile Include="Execute\IExecutable.cs" />
-    <Compile Include="Execute\IExecuteError.cs" />
-    <Compile Include="Execute\IExecuteResult.cs" />
     <Compile Include="IO\FileSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Common.Designer.cs">
+      <DependentUpon>Common.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="String\HelpStringHelpers.cs" />
     <Compile Include="String\StringExtensions.cs" />
     <Compile Include="Validation\IValidateArgumentError.cs" />
     <Compile Include="Validation\IValidateArgumentsResult.cs" />
@@ -59,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Common.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

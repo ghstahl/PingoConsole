@@ -35,6 +35,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,10 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyAccumulatorExtensions.cs" />
+    <Compile Include="IAssemblyAccumulator.cs" />
+    <Compile Include="MefImporter.cs" />
     <Compile Include="EmbeddedResourceAssemblyAccumulator.cs" />
     <Compile Include="FileSystemLocalAssemblyAccumulator.cs" />
     <Compile Include="FileUnblocker.cs" />
-    <Compile Include="IAssemblyAccumulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -62,6 +65,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pingo.CommandLine\Pingo.CommandLine.csproj">
+      <Project>{922B1E1D-4053-4E46-BF15-9A174743EF8C}</Project>
+      <Name>Pingo.CommandLine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

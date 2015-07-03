@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Fclp.Internals;
 using Fclp.Internals.Extensions;
+using Pingo.CommandLine.String;
 
 namespace Pingo.FluentCommandLineParser.Contrib.Help
 {

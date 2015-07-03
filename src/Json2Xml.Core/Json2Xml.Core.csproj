@@ -34,8 +34,8 @@
       <HintPath>..\packages\FluentCommandLineParser.1.4.1\lib\net35\FluentCommandLineParser.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -50,7 +50,6 @@
     <Compile Include="Help\EnumArgumentSimpleOptionHelpRecord.cs" />
     <Compile Include="Help\SimpleOptionHelpRecord.cs" />
     <Compile Include="CommandLine\Parser.cs" />
-    <Compile Include="ConsoleHelper.cs" />
     <Compile Include="Executables\Json2XmlExecutable.cs" />
     <Compile Include="Executables\Xml2JsonExecutable.cs" />
     <Compile Include="Program.cs" />

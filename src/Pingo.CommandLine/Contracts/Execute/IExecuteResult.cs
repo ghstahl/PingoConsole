@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Pingo.CommandLine.Execute
+namespace Pingo.CommandLine.Contracts.Execute
 {
     /// <summary>
     ///  Represents all the information gained from the result of a execute operation.

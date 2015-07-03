@@ -1,8 +1,7 @@
 ﻿using System;
-using System.CodeDom;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MSTestExtensions;
-using Pingo.CommandLine.Enum;
+using Pingo.CommandLine.EnumUtility;
 
 namespace Pingo.CommandLine.Tests
 {

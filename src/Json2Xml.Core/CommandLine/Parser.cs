@@ -1,16 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
 using Fclp;
 using Fclp.Internals;
-using Pingo.CommandLine.Enum;
+using Pingo.CommandLine.ConsoleUtility;
+using Pingo.CommandLine.EnumUtility;
 using Pingo.FluentCommandLineParser.Contrib.Help;
 using ParserTupleResult = System.Tuple<Fclp.FluentCommandLineParser, Fclp.ICommandLineParserResult>;
 using SimpleOptionHelpRecord = Json2Xml.Core.Help.SimpleOptionHelpRecord;
 
 namespace Json2Xml.Core.CommandLine
 {
+    public class MyConsoleWriter : Pingo.CommandLine.ConsoleUtility.Writer
+    {
+        public override string AcquireString(StringResources id)
+        {
+            switch (id)
+            {
+                case StringResources.FormatTitleLine:
+                    return Json2Xml.Resources.Common.Format_TitleLine;
+            }
+            return null;
+
+        }
+    }
+
     public static class Parser
     {
         public static bool Help;
@@ -18,6 +31,7 @@ namespace Json2Xml.Core.CommandLine
         public static string Output;
         public static Wellknown.ConversionType ConversionType;
 
+        public static MyConsoleWriter ConsoleWriter = new MyConsoleWriter();
         public static Fclp.ICommandLineParserResult LastResult { get; private set; }
         public static bool ShouldShowHelp()
         {
@@ -124,38 +138,25 @@ namespace Json2Xml.Core.CommandLine
             Environment.ExitCode = (int)Wellknown.ReturnCodes.BadArguments;
         }
 
-        public static void WriteTitleBlock(string name)
-        {
-            var titleLine = string.Format(Json2Xml.Resources.Common.Format_TitleLine,name);
-            var breakerLine = new string('-', titleLine.Count());
 
-            Console.WriteLine(breakerLine);
-            Console.WriteLine(titleLine);
-            Console.WriteLine(breakerLine);
-        }
 
-        public static void WriteIndent(string content, int level)
-        {
-            var indentedContent = HelpStringHelpers.GetIndentString(level) + content.Replace(Environment.NewLine, Environment.NewLine + HelpStringHelpers.GetIndentString(level));
-            Console.WriteLine(indentedContent);
-
-        }
+     
         public static void WriteHelp()
         {
-            WriteTitleBlock(Json2Xml.Resources.Common.Title_Help);
+            ConsoleWriter.WriteTitleBlock(Json2Xml.Resources.Common.Title_Help);
 
             Console.WriteLine();
 
             foreach (var or in ListOptionRecords)
             {
-                WriteIndent(Json2Xml.Resources.Common.Breaker_Small,1);
-                WriteIndent(or.HelpText, 1);
+                Pingo.CommandLine.ConsoleUtility.Writer.WriteIndent(Json2Xml.Resources.Common.Breaker_Small, 1);
+                Pingo.CommandLine.ConsoleUtility.Writer.WriteIndent(or.HelpText, 1);
             }
         }
         public static void WriteHelpUsage()
         {
             Console.WriteLine(Json2Xml.Resources.Common.Title_Usage);
-            WriteIndent(Json2Xml.Resources.Common.Usage,1);
+            Pingo.CommandLine.ConsoleUtility.Writer.WriteIndent(Json2Xml.Resources.Common.Usage, 1);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pingo.CommandLine.Enum
+namespace Pingo.CommandLine.EnumUtility
 {
     public static class EnumExtensions
     {

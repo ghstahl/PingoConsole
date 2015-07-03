@@ -1,4 +1,4 @@
-namespace Pingo.FluentCommandLineParser.Contrib.Help
+namespace Pingo.CommandLine.String
 {
     public static class HelpStringHelpers
     {

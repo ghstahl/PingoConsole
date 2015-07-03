@@ -3,6 +3,7 @@ using System.IO;
 using System.Xml;
 using Json2Xml.Core.CommandLine;
 using Newtonsoft.Json;
+using Pingo.CommandLine.Contracts.Execute;
 using Pingo.CommandLine.Execute;
 
 namespace Json2Xml.Core.Executables

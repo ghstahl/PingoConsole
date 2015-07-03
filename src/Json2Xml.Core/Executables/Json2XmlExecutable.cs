@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Newtonsoft.Json;
+using Pingo.CommandLine.Contracts.Execute;
 using Pingo.CommandLine.Execute;
 
 namespace Json2Xml.Core.Executables
