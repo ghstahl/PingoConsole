@@ -34,11 +34,10 @@ namespace Pingo.CommandLineHelp.Commands
 
         public IExecuteResult ExecuteCommand(string[] args)
         {
-            var twoColumnWidths = new[] {1, 16, 999};
-            var twoColumnFlexIds = new[] {2};
-            var twoColumnTruncatedIds = new[] {1};
 
-            twoColumnWidths = twoColumnWidths.ToFlexWidthColumns(twoColumnFlexIds, Console.BufferWidth-1, 16);
+            var twoColumnWidths = new[] { 1, 0, 999 };
+            var twoColumnFlexIds = new[] { 2 };
+            var twoColumnTruncatedIds = new[] { 1 };
 
             var executeResult = new ExecuteResult {Name = Resources.HelpResources.Name_Help};
             const string reservedTokens = "-/";
@@ -67,7 +66,7 @@ namespace Pingo.CommandLineHelp.Commands
             try
             {
                 var commandHelpRecord =
-                    _commandHelpList.First(
+                    CommandHelpList.First(
                         i => System.String.Compare(command, i.Key, System.StringComparison.OrdinalIgnoreCase) == 0);
                 targetCommandHelp = commandHelpRecord.Value;
                 goto HelpForCommand;
@@ -82,11 +81,18 @@ namespace Pingo.CommandLineHelp.Commands
 
             HelpDashboard:
             ///////////////////////////////////////////////////////////////////////////////////////////////////////
-            var pageMyHelpDashboard = new MyHelpDashboard(_commandHelpList, twoColumnWidths, twoColumnTruncatedIds);
+            var helpDashboardColumn2Width = CommandHelpList.LongestNameWidth() + 4;
+            twoColumnWidths[1] = helpDashboardColumn2Width;
+            twoColumnWidths = twoColumnWidths.ToFlexWidthColumns(twoColumnFlexIds, Console.BufferWidth - 1, helpDashboardColumn2Width);
+            var pageMyHelpDashboard = new MyHelpDashboard(CommandHelpList, twoColumnWidths, twoColumnTruncatedIds);
             pageMyHelpDashboard.WritePage();
             return executeResult;
 
             HelpForCommand:
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////
+            var helpForCommandColumn2Width = targetCommandHelp.LongestNameWidth() + 4;
+            twoColumnWidths[1] = helpForCommandColumn2Width;
+            twoColumnWidths = twoColumnWidths.ToFlexWidthColumns(twoColumnFlexIds, Console.BufferWidth - 1, helpForCommandColumn2Width);
             var pageMyCommandHelp = new MyCommandHelpPage(targetCommandHelp, twoColumnWidths, twoColumnTruncatedIds);
             pageMyCommandHelp.WritePage();
             return executeResult;
