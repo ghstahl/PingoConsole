@@ -61,29 +61,155 @@ namespace Pingo.TestCommands.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;path to output file&gt;.
+        /// </summary>
+        public static string Argument_PathToOutput {
+            get {
+                return ResourceManager.GetString("Argument_PathToOutput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;path to source file&gt;.
+        /// </summary>
+        public static string Argument_PathToSource {
+            get {
+                return ResourceManager.GetString("Argument_PathToSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Description for the Test Command.
         /// </summary>
-        public static string Description {
+        public static string Description_Test {
             get {
-                return ResourceManager.GetString("Description", resourceCulture);
+                return ResourceManager.GetString("Description_Test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Already Exists: {0}.
+        /// </summary>
+        public static string Format_FileAlreadExists {
+            get {
+                return ResourceManager.GetString("Format_FileAlreadExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File not found: {0}.
+        /// </summary>
+        public static string Format_FileNotFound {
+            get {
+                return ResourceManager.GetString("Format_FileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1}.
+        /// </summary>
+        public static string Format_OptionUsage {
+            get {
+                return ResourceManager.GetString("Format_OptionUsage", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Test.
         /// </summary>
-        public static string Name {
+        public static string Name_Test {
             get {
-                return ResourceManager.GetString("Name", resourceCulture);
+                return ResourceManager.GetString("Name_Test", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;nuspec | project &gt; [options].
+        ///   Looks up a localized string similar to Shows Help.
         /// </summary>
-        public static string UsageFragment {
+        public static string OptionDescription_Help {
             get {
-                return ResourceManager.GetString("UsageFragment", resourceCulture);
+                return ResourceManager.GetString("OptionDescription_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The path to the output file.
+        /// </summary>
+        public static string OptionDescription_Output_Test {
+            get {
+                return ResourceManager.GetString("OptionDescription_Output_Test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The pah to a source file.
+        /// </summary>
+        public static string OptionDescription_Source_Test {
+            get {
+                return ResourceManager.GetString("OptionDescription_Source_Test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output.
+        /// </summary>
+        public static string OptionLongName_Output {
+            get {
+                return ResourceManager.GetString("OptionLongName_Output", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source.
+        /// </summary>
+        public static string OptionLongName_Source {
+            get {
+                return ResourceManager.GetString("OptionLongName_Source", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -Help (?).
+        /// </summary>
+        public static string OptionName_Help {
+            get {
+                return ResourceManager.GetString("OptionName_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to o.
+        /// </summary>
+        public static string OptionShortName_Output {
+            get {
+                return ResourceManager.GetString("OptionShortName_Output", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to s.
+        /// </summary>
+        public static string OptionShortName_Source {
+            get {
+                return ResourceManager.GetString("OptionShortName_Source", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -Help.
+        /// </summary>
+        public static string OptionUsage_Help {
+            get {
+                return ResourceManager.GetString("OptionUsage_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -Source &lt;path to json file&gt; -Output &lt;path to new xml file&gt;.
+        /// </summary>
+        public static string UsageFragment_Test {
+            get {
+                return ResourceManager.GetString("UsageFragment_Test", resourceCulture);
             }
         }
     }

@@ -117,13 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Description" xml:space="preserve">
+  <data name="Argument_PathToOutput" xml:space="preserve">
+    <value>&lt;path to output file&gt;</value>
+  </data>
+  <data name="Argument_PathToSource" xml:space="preserve">
+    <value>&lt;path to source file&gt;</value>
+  </data>
+  <data name="Description_Test" xml:space="preserve">
     <value>The Description for the Test Command</value>
   </data>
-  <data name="Name" xml:space="preserve">
+  <data name="Format_FileAlreadExists" xml:space="preserve">
+    <value>File Already Exists: {0}</value>
+  </data>
+  <data name="Format_FileNotFound" xml:space="preserve">
+    <value>File not found: {0}</value>
+  </data>
+  <data name="Format_OptionUsage" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="Name_Test" xml:space="preserve">
     <value>Test</value>
   </data>
-  <data name="UsageFragment" xml:space="preserve">
-    <value>&lt;nuspec | project &gt; [options]</value>
+  <data name="OptionDescription_Help" xml:space="preserve">
+    <value>Shows Help</value>
+  </data>
+  <data name="OptionDescription_Output_Test" xml:space="preserve">
+    <value>The path to the output file</value>
+  </data>
+  <data name="OptionDescription_Source_Test" xml:space="preserve">
+    <value>The pah to a source file</value>
+  </data>
+  <data name="OptionLongName_Output" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="OptionLongName_Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="OptionName_Help" xml:space="preserve">
+    <value>-Help (?)</value>
+  </data>
+  <data name="OptionShortName_Output" xml:space="preserve">
+    <value>o</value>
+  </data>
+  <data name="OptionShortName_Source" xml:space="preserve">
+    <value>s</value>
+  </data>
+  <data name="OptionUsage_Help" xml:space="preserve">
+    <value>-Help</value>
+  </data>
+  <data name="UsageFragment_Test" xml:space="preserve">
+    <value>-Source &lt;path to json file&gt; -Output &lt;path to new xml file&gt;</value>
   </data>
 </root>

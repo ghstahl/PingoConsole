@@ -5,7 +5,7 @@ using Fclp;
 using Pingo.CommandLine.ArrayUtils;
 using Pingo.CommandLine.Composite;
 using Pingo.CommandLine.ConsoleUtility;
-using Pingo.CommandLine.EntryPoint.Resources;
+using Pingo.CommandLine.Resources.EntryPoint.Resources;
 
 namespace Pingo.CommandLine.EntryPoint
 {
@@ -137,7 +137,7 @@ namespace Pingo.CommandLine.EntryPoint
                 {
                     case ParseResult.BadCommandArgument:
                         ConsoleHelper.DoConsoleErrorColor(
-                            () => System.Console.WriteLine(EntryPoint.Resources.Common.Format_UnknownCommand, pe.Text));
+                            () => System.Console.WriteLine(Resources.EntryPoint.Resources.Common.Format_UnknownCommand, pe.Text));
                         break;
                     default:
                         throw;
@@ -147,7 +147,7 @@ namespace Pingo.CommandLine.EntryPoint
             catch (Exception e)
             {
                 ConsoleHelper.DoConsoleErrorColor(
-                    () => System.Console.WriteLine(EntryPoint.Resources.Common.Format_UnknownException, e.Message));
+                    () => System.Console.WriteLine(Resources.EntryPoint.Resources.Common.Format_UnknownException, e.Message));
 
             }
             finally

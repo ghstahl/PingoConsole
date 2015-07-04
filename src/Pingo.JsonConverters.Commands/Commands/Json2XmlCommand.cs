@@ -14,8 +14,8 @@ namespace Pingo.JsonConverters.Commands.Commands
     {
         public IExecuteResult ExecuteCommand(string[] args)
         {
-            IExecuteResult finalResult;
             var executeResult = new ExecuteResult { Name = "Json2Xml" };
+            IExecuteResult finalResult = executeResult;
             try
             {
                 var parser = new Json2XmlArgumentParser();
@@ -29,7 +29,6 @@ namespace Pingo.JsonConverters.Commands.Commands
                 var executeError = new ExecuteError { ErrorText = e.Message };
                 executeResult.ErrorsStore.Add(executeError);
             }
-            finalResult = executeResult;
             return finalResult;
         }
     }
