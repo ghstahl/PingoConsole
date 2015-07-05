@@ -26,6 +26,11 @@ namespace Pingo.CommandLine.Contracts.Execute
         /// Gets whether the validation operation encountered any errors.
         /// </summary>
         bool HasErrors { get; }
-       
+
+        /// <summary>
+        /// The result code that will subsequently get returned by the the command runner
+        /// </summary>
+        int ResultCode { get; }
+
     }
 }

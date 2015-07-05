@@ -35,5 +35,8 @@ namespace Pingo.CommandLine.Execute
         {
             get { return Errors.Any(); }
         }
+
+
+        public int ResultCode { get; set; }
     }
 }

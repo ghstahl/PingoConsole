@@ -10,8 +10,9 @@ using Pingo.CommandLine.Resources.EntryPoint.Resources;
 namespace Pingo.CommandLine.EntryPoint
 {
 
-    public enum ParseResult
+    public enum ExitResult
     {
+        Fatal = -1,
         Success = 0,
         BadCommandArgument = 1,
         EmptyArguments = 2
@@ -19,7 +20,7 @@ namespace Pingo.CommandLine.EntryPoint
 
     public class ParseException : Exception
     {
-        public ParseResult Result { get; set; }
+        public ExitResult Result { get; set; }
         public string Text { get; set; }
     }
 
@@ -43,7 +44,7 @@ namespace Pingo.CommandLine.EntryPoint
             string token = command[0].ToString(CultureInfo.InvariantCulture);
             if (reservedTokens.Contains(token))
             {
-                throw new ParseException() {Result = ParseResult.BadCommandArgument};
+                throw new ParseException() { Result = ExitResult.BadCommandArgument };
             }
             var result = new InitialParseResult() {Command = command};
 
@@ -52,7 +53,7 @@ namespace Pingo.CommandLine.EntryPoint
             ///////////////////////////////////////////////////////////////////////////////////////////
             // Help Switch
             ///////////////////////////////////////////////////////////////////////////////////////////
-            var helpOption = p.Setup<bool>(CaseType.CaseInsensitive, helpOptions)
+            p.Setup<bool>(CaseType.CaseInsensitive, helpOptions)
                 .Callback(value => helpSwitch = value)
                 .SetDefault(false);
             p.Parse(args);
@@ -72,20 +73,13 @@ namespace Pingo.CommandLine.EntryPoint
 
         public static void MefRunnerEntryPoint(IAssemblyAccumulator assemblyAccumulator, string[] args)
         {
+            var finalResult = (int)ExitResult.Fatal;
+            
             try
             {
-
-                var twoColumnWidths = new[] {1, 16, 999};
-                var twoColumnFlexIds = new[] {2};
-                var twoColumnTruncatedIds = new[] {1};
-
-                twoColumnWidths = twoColumnWidths.ToFlexWidthColumns(twoColumnFlexIds, System.Console.BufferWidth, 16);
-
-
                 var commandManager = new CommandManager(assemblyAccumulator);
                 commandManager.BuildContainer();
 
-                var daddyIssues = new[] {"who", "is", "Your", "Daddy", "?"};
                 var helpOptions = new[] {Common.ShortHelpOption, Common.LongHelpOption};
 
                 var result = InitialParse(args, helpOptions);
@@ -111,7 +105,7 @@ namespace Pingo.CommandLine.EntryPoint
                                 System.StringComparison.OrdinalIgnoreCase) == 0);
                     if (cCommand == null)
                     {
-                        throw new ParseException() {Result = ParseResult.BadCommandArgument, Text = result.Command};
+                        throw new ParseException() { Result = ExitResult.BadCommandArgument, Text = result.Command };
                     }
 
                     var commandResult = cCommand.Value.ExecuteCommand(args);
@@ -122,12 +116,12 @@ namespace Pingo.CommandLine.EntryPoint
                             ConsoleHelper.DoConsoleErrorColor(
                                 () => System.Console.WriteLine(error.ErrorText));
                         }
-
                     }
+                    finalResult = commandResult.ResultCode;
                 }
                 catch (Exception e)
                 {
-                    throw new ParseException() {Result = ParseResult.BadCommandArgument, Text = result.Command};
+                    throw new ParseException() { Result = ExitResult.BadCommandArgument, Text = result.Command };
                 }
 
             }
@@ -135,7 +129,7 @@ namespace Pingo.CommandLine.EntryPoint
             {
                 switch (pe.Result)
                 {
-                    case ParseResult.BadCommandArgument:
+                    case ExitResult.BadCommandArgument:
                         ConsoleHelper.DoConsoleErrorColor(
                             () => System.Console.WriteLine(Resources.EntryPoint.Resources.Common.Format_UnknownCommand, pe.Text));
                         break;
@@ -148,11 +142,10 @@ namespace Pingo.CommandLine.EntryPoint
             {
                 ConsoleHelper.DoConsoleErrorColor(
                     () => System.Console.WriteLine(Resources.EntryPoint.Resources.Common.Format_UnknownException, e.Message));
-
             }
             finally
             {
-                // do help
+                Environment.ExitCode = finalResult;
             }
         }
     }

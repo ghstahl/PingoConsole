@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ResultCodes.cs" />
     <Compile Include="Executables\TestExecutable.cs" />
     <Compile Include="Help\TestCommandHelp.cs" />
     <Compile Include="Parser\TestArgumentParser.cs" />
@@ -70,6 +71,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
