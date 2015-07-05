@@ -54,6 +54,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VSIX", "VSIX", "{4E4B33E3-4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom.Command.Wizard", "Custom.Command.Wizard\Custom.Command.Wizard.csproj", "{F1A2BB41-496B-4EC1-BCCA-B28C06EF3B89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine.PluginTemplate", "Pingo.CommandLine.PluginTemplate\Pingo.CommandLine.PluginTemplate.csproj", "{BAB2FF23-CF42-486E-B74D-9084710EE7AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine.MyCustomCommand1", "Pingo.CommandLine.MyCustomCommand1\Pingo.CommandLine.MyCustomCommand1.csproj", "{D9ADB325-702B-41AD-AA2B-20C467892E0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine.MyCustomCommand2", "Pingo.CommandLine.MyCustomCommand2\Pingo.CommandLine.MyCustomCommand2.csproj", "{3B6F3AC0-41C4-4CFC-BBB4-DC9AD149EEA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,6 +130,18 @@ Global
 		{F1A2BB41-496B-4EC1-BCCA-B28C06EF3B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1A2BB41-496B-4EC1-BCCA-B28C06EF3B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1A2BB41-496B-4EC1-BCCA-B28C06EF3B89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB2FF23-CF42-486E-B74D-9084710EE7AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB2FF23-CF42-486E-B74D-9084710EE7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB2FF23-CF42-486E-B74D-9084710EE7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB2FF23-CF42-486E-B74D-9084710EE7AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9ADB325-702B-41AD-AA2B-20C467892E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9ADB325-702B-41AD-AA2B-20C467892E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9ADB325-702B-41AD-AA2B-20C467892E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9ADB325-702B-41AD-AA2B-20C467892E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B6F3AC0-41C4-4CFC-BBB4-DC9AD149EEA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B6F3AC0-41C4-4CFC-BBB4-DC9AD149EEA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B6F3AC0-41C4-4CFC-BBB4-DC9AD149EEA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B6F3AC0-41C4-4CFC-BBB4-DC9AD149EEA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,5 +159,8 @@ Global
 		{39296FCC-AB34-404A-9BB3-E676C126CD71} = {BF4B6A2E-611B-4BE2-9CF7-1527863B52D9}
 		{C2EBBE18-AF5F-44F2-A8DC-EAEED6C448A6} = {156FD781-7026-4063-A210-F82939BDA017}
 		{F1A2BB41-496B-4EC1-BCCA-B28C06EF3B89} = {4E4B33E3-4E5C-4AAE-898E-74E58C782EE5}
+		{BAB2FF23-CF42-486E-B74D-9084710EE7AF} = {4E4B33E3-4E5C-4AAE-898E-74E58C782EE5}
+		{D9ADB325-702B-41AD-AA2B-20C467892E0F} = {1B5E59A6-B3C7-4D56-B760-7D43FD90F39C}
+		{3B6F3AC0-41C4-4CFC-BBB4-DC9AD149EEA8} = {1B5E59A6-B3C7-4D56-B760-7D43FD90F39C}
 	EndGlobalSection
 EndGlobal

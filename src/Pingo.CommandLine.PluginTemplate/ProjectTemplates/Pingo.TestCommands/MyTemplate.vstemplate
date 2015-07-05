@@ -1,0 +1,46 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Pingo CommandLine Plugin</Name>
+    <Description>A Pingo CommandLine plugin</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Pingo.CommandLine.MyCustomCommand</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$s.csproj" File="Pingo.TestCommands.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
+      <Folder Name="Commands" TargetFolderName="Commands">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$commandname$Command.cs">TestCommand.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Executables" TargetFolderName="Executables">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$commandname$Executable.cs">TestExecutable.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Help" TargetFolderName="Help">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$commandname$CommandHelp.cs">TestCommandHelp.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Parser" TargetFolderName="Parser">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$commandname$ArgumentParser.cs">TestArgumentParser.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Resources" TargetFolderName="Resources">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Common.resx">Common.resx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Common.Designer.cs">Common.Designer.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ResultCodes.cs">ResultCodes.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Custom.Command.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c7060f4e798cb07c</Assembly>
+    <FullClassName>Custom.Command.Wizard.CommandNameWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
