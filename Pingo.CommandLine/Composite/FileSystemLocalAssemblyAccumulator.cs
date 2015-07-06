@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using log4net;
 using Pingo.CommandLine.IO;
 
 namespace Pingo.CommandLine.Composite
@@ -16,7 +15,7 @@ namespace Pingo.CommandLine.Composite
         /// <summary>
         /// The Logger.
         /// </summary>
-        private static readonly ILog Logger = LogManager.GetLogger(typeof(FileSystemLocalAssemblyAccumulator));
+//        private static readonly ILog Logger = LogManager.GetLogger(typeof(FileSystemLocalAssemblyAccumulator));
 
         private string _rootPath;
         /// <summary>
@@ -47,7 +46,7 @@ namespace Pingo.CommandLine.Composite
                 }
                 catch (FileLoadException)
                 {
-                    Logger.ErrorFormat(Resources.Common.FileLoadError, file.FullName);
+  //                  Logger.ErrorFormat(Resources.Common.FileLoadError, file.FullName);
                     throw;
                 }
                 catch (ReflectionTypeLoadException ex)
@@ -55,7 +54,7 @@ namespace Pingo.CommandLine.Composite
                     if (!file.Name.Equals("ICSharpCode.NRefactory.Cecil.dll", StringComparison.OrdinalIgnoreCase))
                     {
                         string errors = string.Join(Environment.NewLine, ex.LoaderExceptions.Select(e => "-" + e.Message));
-                        Logger.ErrorFormat(Resources.Common.FileReflectionLoadError, file.FullName, errors);
+ //                       Logger.ErrorFormat(Resources.Common.FileReflectionLoadError, file.FullName, errors);
                     }
 
                     // Ignore assemblies that throw this exception
