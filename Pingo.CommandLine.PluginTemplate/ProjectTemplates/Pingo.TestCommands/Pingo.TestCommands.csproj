@@ -36,6 +36,10 @@
       <HintPath>..\packages\Pingo.FluentCommandLineParser.1.0.24\lib\net35\FluentCommandLineParser.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Pingo.CommandLine, Version=1.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pingo.Console.1.0.15\lib\net35\Pingo.CommandLine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -57,12 +61,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Common.resx</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Pingo.CommandLine\Pingo.CommandLine.csproj">
-      <Project>{922b1e1d-4053-4e46-bf15-9a174743ef8c}</Project>
-      <Name>Pingo.CommandLine</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Common.resx">
