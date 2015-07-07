@@ -36,6 +36,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentCommandLineParser, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pingo.FluentCommandLineParser.1.0.25\lib\net45\FluentCommandLineParser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Pingo.CommandLine">
+      <HintPath>..\packages\Pingo.Console.1.0.19\lib\net45\Pingo.CommandLine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -58,10 +66,6 @@
     <ProjectReference Include="..\Pingo.CommandLineHelp\Pingo.CommandLineHelp.csproj">
       <Project>{3483c7fe-0661-4268-9035-10ff7e36cd64}</Project>
       <Name>Pingo.CommandLineHelp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Pingo.CommandLine\Pingo.CommandLine.csproj">
-      <Project>{922b1e1d-4053-4e46-bf15-9a174743ef8c}</Project>
-      <Name>Pingo.CommandLine</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pingo.JsonConverters.Commands\Pingo.JsonConverters.Commands.csproj">
       <Project>{538f714a-4ca7-4255-a3c2-9be6c66cb85c}</Project>
