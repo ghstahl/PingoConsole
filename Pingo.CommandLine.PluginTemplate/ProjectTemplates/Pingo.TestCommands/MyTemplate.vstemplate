@@ -40,7 +40,7 @@
     </Project>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>Custom.Command.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c7060f4e798cb07c</Assembly>
+    <Assembly>Custom.Command.Wizard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=c7060f4e798cb07c</Assembly>
     <FullClassName>Custom.Command.Wizard.CommandNameWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>
