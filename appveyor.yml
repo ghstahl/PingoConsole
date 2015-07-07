@@ -27,6 +27,7 @@ after_test:
 
 artifacts:
   - path: '.\*.nupkg'
+  - path: '.\Pingo.CommandLine.PluginTemplate\bin\Release\Pingo.CommandLine.PluginTemplate.vsix'
     
  
 
