@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.Composition;
-using Pingo.CommandLine.Contracts.Command;
 using Pingo.CommandLine.Contracts.Execute;
 using Pingo.CommandLine.Execute;
 using Pingo.TestCommands.Executables;
@@ -8,9 +7,9 @@ using Pingo.TestCommands.Parser;
 
 namespace Pingo.TestCommands.Commands
 {
-    [Export(typeof (ICommand))]
+    [Export(typeof(Pingo.CommandLine.Contracts.Command.ICommand))]
     [ExportMetadata("Command", "Test")]
-    public class TestCommand : ICommand
+    public class TestCommand : Pingo.CommandLine.Contracts.Command.ICommand
     {
         public IExecuteResult ExecuteCommand(string[] args)
         {

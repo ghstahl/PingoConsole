@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.ComponentModel.Composition;
-using Pingo.CommandLine.Contracts.Help;
 using Pingo.CommandLineHelp.Resources;
 
 namespace Pingo.CommandLineHelp.Help
 {
-   
 
-    [Export(typeof(ICommandHelp))]
+
+    [Export(typeof(Pingo.CommandLine.Contracts.Help.ICommandHelp))]
     [ExportMetadata("Command", "Help")]
-    public class HelpCommand : ICommandHelp
+    public class HelpCommand : Pingo.CommandLine.Contracts.Help.ICommandHelp
     {
         private System.Collections.SortedList _sortedOptionHelps;
         public string Name { get { return HelpResources.Name_Help; } }

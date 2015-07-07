@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Pingo.CommandLine.ConsoleUtility;
-using Pingo.CommandLine.Contracts.Command;
-using Pingo.CommandLine.Contracts.Help;
 using Pingo.CommandLineHelp.Resources;
 
 namespace Pingo.CommandLineHelp.Pages
 {
     public class MyHelpDashboard : ColumnConsolePage
     {
-        private SortedList<string, ICommandHelp> _commandHelps;
+        private SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp> _commandHelps;
 
         public MyHelpDashboard(
-            SortedList<string, ICommandHelp> commandHelps,
+            SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp> commandHelps,
             int[] columnWidthTemplate,
             int[] truncatedColumnIds)
             : base(columnWidthTemplate, truncatedColumnIds)

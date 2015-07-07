@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.Composition;
-using Pingo.CommandLine.Contracts.Command;
 using Pingo.CommandLine.Contracts.Execute;
 using Pingo.CommandLine.Execute;
 using Pingo.JsonConverters.Commands.Executables;
@@ -8,9 +7,9 @@ using Pingo.JsonConverters.Commands.Parser;
 
 namespace Pingo.JsonConverters.Commands.Commands
 {
-    [Export(typeof(ICommand))]
+    [Export(typeof(Pingo.CommandLine.Contracts.Command.ICommand))]
     [ExportMetadata("Command", "Xml2Json")]
-    public class Xml2JsonCommand : ICommand
+    public class Xml2JsonCommand : Pingo.CommandLine.Contracts.Command.ICommand
     {
         public IExecuteResult ExecuteCommand(string[] args)
         {

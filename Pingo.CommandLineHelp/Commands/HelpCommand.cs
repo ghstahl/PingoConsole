@@ -5,29 +5,27 @@ using System.Globalization;
 using System.Linq;
 using Pingo.CommandLine.ArrayUtils;
 using Pingo.CommandLine.ConsoleUtility;
-using Pingo.CommandLine.Contracts.Command;
 using Pingo.CommandLine.Contracts.Execute;
-using Pingo.CommandLine.Contracts.Help;
 using Pingo.CommandLine.Execute;
 using Pingo.CommandLineHelp.Pages;
 
 namespace Pingo.CommandLineHelp.Commands
 {
 
-    [Export(typeof (ICommandLineHelp))]
-    [Export(typeof (ICommand))]
+    [Export(typeof(Pingo.CommandLine.Contracts.Help.ICommandLineHelp))]
+    [Export(typeof(Pingo.CommandLine.Contracts.Command.ICommand))]
     [ExportMetadata("Command", "Help")]
-    public class HelpCommand : ICommand, ICommandLineHelp
+    public class HelpCommand : Pingo.CommandLine.Contracts.Command.ICommand, Pingo.CommandLine.Contracts.Help.ICommandLineHelp
     {
 
-        private SortedList<string, ICommandHelp> _commandHelpList;
+        private SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp> _commandHelpList;
 
-        private SortedList<string, ICommandHelp> CommandHelpList
+        private SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp> CommandHelpList
         {
-            get { return _commandHelpList ?? (_commandHelpList = new SortedList<string, ICommandHelp>()); }
+            get { return _commandHelpList ?? (_commandHelpList = new SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp>()); }
         }
 
-        public void Add(ICommandHelp commandHelp)
+        public void Add(Pingo.CommandLine.Contracts.Help.ICommandHelp commandHelp)
         {
             CommandHelpList.Add(commandHelp.Name, commandHelp);
         }
@@ -61,7 +59,7 @@ namespace Pingo.CommandLineHelp.Commands
                 goto HelpDashboard;
             }
 
-            ICommandHelp targetCommandHelp;
+            Pingo.CommandLine.Contracts.Help.ICommandHelp targetCommandHelp;
 
             try
             {

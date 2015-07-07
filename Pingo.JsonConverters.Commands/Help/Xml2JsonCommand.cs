@@ -1,19 +1,34 @@
 ﻿using System.Collections;
 using System.ComponentModel.Composition;
 using Pingo.CommandLine;
-using Pingo.CommandLine.Contracts.Help;
 
 namespace Pingo.JsonConverters.Commands.Help
 {
-    [Export(typeof(ICommandHelp))]
+    [Export(typeof(Pingo.CommandLine.Contracts.Help.ICommandHelp))]
     [ExportMetadata("Command", "Xml2Json")]
-    public class Xml2JsonCommand : ICommandHelp
+    public class Xml2JsonCommand : Pingo.CommandLine.Contracts.Help.ICommandHelp
     {
         private System.Collections.SortedList _sortedOptionHelps;
-        public string Name { get { return Resources.Common.Name_Xml2Json; } }
-        public string Description { get { return Resources.Common.Description_Xml2Json; } }
-        public string Usage { get { return Resources.Common.UsageFragment_Xml2Json; } }
-        public string Detailed { get { return Resources.Common.Description_Xml2Json; } }
+
+        public string Name
+        {
+            get { return Resources.Common.Name_Xml2Json; }
+        }
+
+        public string Description
+        {
+            get { return Resources.Common.Description_Xml2Json; }
+        }
+
+        public string Usage
+        {
+            get { return Resources.Common.UsageFragment_Xml2Json; }
+        }
+
+        public string Detailed
+        {
+            get { return Resources.Common.Description_Xml2Json; }
+        }
 
         public SortedList Options
         {
@@ -51,7 +66,7 @@ namespace Pingo.JsonConverters.Commands.Help
                             {
                                 Name = Resources.Common.OptionName_Help,
                                 Description = Resources.Common.OptionDescription_Help,
-                                Usage =Resources.Common.OptionUsage_Help
+                                Usage = Resources.Common.OptionUsage_Help
                             }
                         }
 

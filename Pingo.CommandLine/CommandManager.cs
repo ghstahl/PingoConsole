@@ -1,31 +1,28 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using Pingo.CommandLine.Composite;
-using Pingo.CommandLine.Contracts.Command;
-using Pingo.CommandLine.Contracts.Help;
 
 namespace Pingo.CommandLine
 {
     public class CommandManager
     {
-        private Dictionary<string, Lazy<ICommand, ICommandMetaData>> _commandMap;
+        private Dictionary<string, Lazy<Pingo.CommandLine.Contracts.Command.ICommand, Pingo.CommandLine.Contracts.Command.ICommandMetaData>> _commandMap;
 
-        public Dictionary<string, Lazy<ICommand, ICommandMetaData>> CommandMap
+        public Dictionary<string, Lazy<Pingo.CommandLine.Contracts.Command.ICommand, Pingo.CommandLine.Contracts.Command.ICommandMetaData>> CommandMap
         {
-            get { return _commandMap ?? (_commandMap = new Dictionary<string, Lazy<ICommand, ICommandMetaData>>()); }
+            get { return _commandMap ?? (_commandMap = new Dictionary<string, Lazy<Pingo.CommandLine.Contracts.Command.ICommand, Pingo.CommandLine.Contracts.Command.ICommandMetaData>>()); }
         }
 
-        [Import(typeof(ICommandLineHelp))]
-        public ICommandLineHelp CommandLineHelp;
+        [Import(typeof(Pingo.CommandLine.Contracts.Help.ICommandLineHelp))]
+        public Pingo.CommandLine.Contracts.Help.ICommandLineHelp CommandLineHelp;
 
         [ImportMany]
-        public IEnumerable<Lazy<ICommand, ICommandMetaData>> Commands;
+        public IEnumerable<Lazy<Pingo.CommandLine.Contracts.Command.ICommand, Pingo.CommandLine.Contracts.Command.ICommandMetaData>> Commands;
 
         [ImportMany]
-        public IEnumerable<Lazy<ICommandHelp, ICommandMetaData>> CommandHelps;
+        public IEnumerable<Lazy<Pingo.CommandLine.Contracts.Help.ICommandHelp, Pingo.CommandLine.Contracts.Command.ICommandMetaData>> CommandHelps;
 
         private readonly IAssemblyAccumulator _assemblAccumulator;
         public CommandManager(IAssemblyAccumulator assmblAccumulator)
@@ -50,7 +47,7 @@ namespace Pingo.CommandLine
             }
 
 
-            foreach (Lazy<ICommand, ICommandMetaData> i in Commands)
+            foreach (Lazy<Pingo.CommandLine.Contracts.Command.ICommand, Pingo.CommandLine.Contracts.Command.ICommandMetaData> i in Commands)
             {
                 CommandMap.Add(i.Metadata.Command,i);
             }

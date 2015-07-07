@@ -1,15 +1,14 @@
 using System.Reflection;
 using Pingo.CommandLine.ConsoleUtility;
-using Pingo.CommandLine.Contracts.Help;
 using Pingo.CommandLineHelp.Resources;
 
 namespace Pingo.CommandLineHelp.Pages
 {
     public class MyCommandHelpPage : ColumnConsolePage
     {
-        private ICommandHelp _commandHelp;
+        private Pingo.CommandLine.Contracts.Help.ICommandHelp _commandHelp;
         public MyCommandHelpPage(
-            ICommandHelp commandHelp,
+            Pingo.CommandLine.Contracts.Help.ICommandHelp commandHelp,
             int[] columnWidthTemplate,
             int[] truncatedColumnIds)
             : base(columnWidthTemplate, truncatedColumnIds)
@@ -26,7 +25,6 @@ namespace Pingo.CommandLineHelp.Pages
                 case ResourceString.MainTitlePanel:
                     result = string.Format(Common.Format_UsageFormat
                         , assembly.GetName().Name, _commandHelp.Name, _commandHelp.Usage);
-
                     break;
 
                 case ResourceString.ColumnBlockTitle:
@@ -56,7 +54,7 @@ namespace Pingo.CommandLineHelp.Pages
             for (var ac = 0; ac < count; ++ac)
             {
                 arr[ac] = new string[3];
-                IOptionHelp dds = (IOptionHelp) _commandHelp.Options.GetByIndex(ac);
+                var dds = (Pingo.CommandLine.Contracts.Help.IOptionHelp)_commandHelp.Options.GetByIndex(ac);
 
                 arr[ac][0] = "";
                 arr[ac][1] = dds.Name;

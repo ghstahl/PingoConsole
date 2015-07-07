@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.ComponentModel.Composition;
 using Pingo.CommandLine;
-using Pingo.CommandLine.Contracts.Help;
 
 namespace Pingo.TestCommands.Help
 {
-    [Export(typeof (ICommandHelp))]
+    [Export(typeof(Pingo.CommandLine.Contracts.Help.ICommandHelp))]
     [ExportMetadata("Command", "Test")]
-    public class TestCommandHelp : ICommandHelp
+    public class TestCommandHelp : Pingo.CommandLine.Contracts.Help.ICommandHelp
     {
         private System.Collections.SortedList _sortedOptionHelps;
 

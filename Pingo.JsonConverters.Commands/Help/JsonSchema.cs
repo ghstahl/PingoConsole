@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.ComponentModel.Composition;
 using Pingo.CommandLine;
-using Pingo.CommandLine.Contracts.Help;
 
 namespace Pingo.JsonConverters.Commands.Help
 {
-    [Export(typeof (ICommandHelp))]
+    [Export(typeof(Pingo.CommandLine.Contracts.Help.ICommandHelp))]
     [ExportMetadata("Command", "JsonSchema")]
-    public class JsonSchema : ICommandHelp
+    public class JsonSchema : Pingo.CommandLine.Contracts.Help.ICommandHelp
     {
         private System.Collections.SortedList _sortedOptionHelps;
 
@@ -42,7 +41,7 @@ namespace Pingo.JsonConverters.Commands.Help
                     _sortedOptionHelps = new SortedList
                     {
                         {
-                           optionNameSource, new OptionHelp()
+                            optionNameSource, new OptionHelp()
                             {
                                 Name = optionNameSource,
                                 Description = Resources.Common.OptionDescription_Source_Json2Xml,
