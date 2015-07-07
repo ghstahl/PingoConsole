@@ -14,14 +14,14 @@
     <copyright>Copyright George Stahl 2015</copyright>
     <tags>Pingo commandline Console c# net45</tags>
     <dependencies>
-        <dependency id="Pingo.FluentCommandLineParser" version="1.0.24" />
+        <dependency id="Pingo.FluentCommandLineParser" version="1.0.25" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.dll" target="lib\net35" />
-    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.pdb" target="lib\net35" />
-    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.Resources.dll" target="lib\net35" />
-    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.Resources.pdb" target="lib\net35" />
+    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.dll" target="lib\net45" />
+    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.pdb" target="lib\net45" />
+    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.Resources.dll" target="lib\net45" />
+    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.Resources.pdb" target="lib\net45" />
   </files>
 </package>
 

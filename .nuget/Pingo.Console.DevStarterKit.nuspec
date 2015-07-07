@@ -1,25 +1,28 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Pingo.CommandLineHelp</id>
-    <title>Pingo Console Kit: The Stock Help Plugin</title>
+    <id>Pingo.Console.DevStarterKit</id>
+    <title>Pingo Console Development Starter Kit</title>
     <version>$version$</version>
     <authors>ghstahl</authors>
     <owners>ghstahl</owners>
     <projectUrl>https://github.com/ghstahl/PingoConsole</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>http://choosealicense.com/licenses/mit/</licenseUrl>
-    <description>This is the stock help plugin for the Pingo Console Kit </description>
+    <description>A MEF Plugin Based Console Starter Kit</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright George Stahl 2015</copyright>
     <tags>Pingo commandline Console c# net45</tags>
+    <developmentDependency>true</developmentDependency>
     <dependencies>
-        <dependency id="Pingo.FluentCommandLineParser" version="1.0.25" />
+      <dependency id="Pingo.Console" version="1.0.18" />
+      <dependency id="Pingo.CommandLineHelp" version="1.0.18" />
+      <dependency id="Pingo.JsonConverters.Commands" version="1.0.18" />
+      <dependency id="Pingo.TestCommands" version="1.0.18" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Pingo.CommandLineHelp\bin\Release\Pingo.CommandLineHelp.dll" target="lib\net45" />
-    <file src="..\Pingo.CommandLineHelp\bin\Release\Pingo.CommandLineHelp.pdb" target="lib\net45" />
+    <file src="tools\Install.ps1" target="tools\Install.ps1" />
   </files>
 </package>
 

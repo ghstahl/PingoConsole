@@ -32,9 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentCommandLineParser, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Pingo.FluentCommandLineParser.1.0.24\lib\net35\FluentCommandLineParser.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="FluentCommandLineParser">
+      <HintPath>..\packages\Pingo.FluentCommandLineParser.1.0.25\lib\net45\FluentCommandLineParser.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -84,13 +83,13 @@
     <Compile Include="Validation\ValidateArgumentsResult.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Pingo.CommandLine.Resources\Pingo.CommandLine.Resources.csproj">
       <Project>{e542977a-42e7-4241-aa39-34a68fcf22e8}</Project>
       <Name>Pingo.CommandLine.Resources</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

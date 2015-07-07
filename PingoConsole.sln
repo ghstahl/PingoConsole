@@ -34,6 +34,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3D10EC
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 		.nuget\pack.ps1 = .nuget\pack.ps1
 		.nuget\Pingo.CommandLineHelp.nuspec = .nuget\Pingo.CommandLineHelp.nuspec
+		.nuget\Pingo.Console.DevStarterKit.nuspec = .nuget\Pingo.Console.DevStarterKit.nuspec
 		.nuget\Pingo.Console.nuspec = .nuget\Pingo.Console.nuspec
 		.nuget\Pingo.JsonConverters.Commands.nuspec = .nuget\Pingo.JsonConverters.Commands.nuspec
 		.nuget\Pingo.TestCommands.nuspec = .nuget\Pingo.TestCommands.nuspec
@@ -48,6 +49,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{538176BD-B65C-4034-A549-1D42EE90CF9D}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{338A479A-D8B8-424D-9F5F-AFBB140AD8B9}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\tools\Install.ps1 = .nuget\tools\Install.ps1
 	EndProjectSection
 EndProject
 Global
@@ -110,5 +116,6 @@ Global
 		{C2EBBE18-AF5F-44F2-A8DC-EAEED6C448A6} = {156FD781-7026-4063-A210-F82939BDA017}
 		{F1A2BB41-496B-4EC1-BCCA-B28C06EF3B89} = {4E4B33E3-4E5C-4AAE-898E-74E58C782EE5}
 		{BAB2FF23-CF42-486E-B74D-9084710EE7AF} = {4E4B33E3-4E5C-4AAE-898E-74E58C782EE5}
+		{338A479A-D8B8-424D-9F5F-AFBB140AD8B9} = {3D10ECC3-1ABA-417F-B8BD-65D2EB6CD2EC}
 	EndGlobalSection
 EndGlobal

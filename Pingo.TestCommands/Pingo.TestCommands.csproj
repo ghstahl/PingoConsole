@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentCommandLineParser, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Pingo.FluentCommandLineParser.1.0.24\lib\net35\FluentCommandLineParser.dll</HintPath>
+    <Reference Include="FluentCommandLineParser, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pingo.FluentCommandLineParser.1.0.25\lib\net45\FluentCommandLineParser.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Pingo.CommandLine, Version=1.0.15.0, Culture=neutral, processorArchitecture=MSIL">
