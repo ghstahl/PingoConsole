@@ -14,7 +14,8 @@
     <copyright>Copyright George Stahl 2015</copyright>
     <tags>Pingo commandline Console c# net45</tags>
     <dependencies>
-        <dependency id="Pingo.FluentCommandLineParser" version="1.0.25" />
+      <dependency id="Pingo.FluentCommandLineParser" version="1.0.25" />
+      <dependency id="Pingo.Console" version="1.0.18" />
     </dependencies>
   </metadata>
   <files>
