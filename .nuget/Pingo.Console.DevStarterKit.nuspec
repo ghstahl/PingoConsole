@@ -15,10 +15,11 @@
     <tags>Pingo commandline Console c# net45</tags>
     <developmentDependency>true</developmentDependency>
     <dependencies>
-      <dependency id="Pingo.Console" version="1.0.18" />
-      <dependency id="Pingo.CommandLineHelp" version="1.0.18" />
-      <dependency id="Pingo.JsonConverters.Commands" version="1.0.18" />
-      <dependency id="Pingo.TestCommands" version="1.0.18" />
+      <dependency id="Pingo.EmbeddedAssemblies" version="0.0.5" />
+      <dependency id="Pingo.Console" version="$version$" />
+      <dependency id="Pingo.CommandLineHelp" version="$version$" />
+      <dependency id="Pingo.JsonConverters.Commands" version="$version$" />
+      <dependency id="Pingo.TestCommands" version="$version$" />
     </dependencies>
   </metadata>
   <files>
