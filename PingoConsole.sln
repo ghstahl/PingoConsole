@@ -33,7 +33,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3D10EC
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 		.nuget\pack.ps1 = .nuget\pack.ps1
+		.nuget\Pingo.CommandLineHelp.nuspec = .nuget\Pingo.CommandLineHelp.nuspec
 		.nuget\Pingo.Console.nuspec = .nuget\Pingo.Console.nuspec
+		.nuget\Pingo.JsonConverters.Commands.nuspec = .nuget\Pingo.JsonConverters.Commands.nuspec
+		.nuget\Pingo.TestCommands.nuspec = .nuget\Pingo.TestCommands.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VSIX", "VSIX", "{4E4B33E3-4E5C-4AAE-898E-74E58C782EE5}"

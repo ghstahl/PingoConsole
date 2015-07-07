@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Pingo.Console</id>
-    <title>Pingo Console Kit</title>
+    <id>Pingo.CommandLineHelp</id>
+    <title>Pingo Console Kit: The Stock Help Plugin</title>
     <version>$version$</version>
     <authors>ghstahl</authors>
     <owners>ghstahl</owners>
     <projectUrl>https://github.com/ghstahl/PingoConsole</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>http://choosealicense.com/licenses/mit/</licenseUrl>
-    <description>A MEF Plugin Based Console Kit</description>
+    <description>This is the stock help plugin for the Pingo Console Kit </description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright George Stahl 2015</copyright>
     <tags>Pingo commandline Console c# net45</tags>
@@ -18,10 +18,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.dll" target="lib\net35" />
-    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.pdb" target="lib\net35" />
-    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.Resources.dll" target="lib\net35" />
-    <file src="..\Pingo.CommandLine\bin\Release\Pingo.CommandLine.Resources.pdb" target="lib\net35" />
+    <file src="..\Pingo.CommandLineHelp\bin\Release\Pingo.CommandLineHelp.dll" target="lib\net35" />
+    <file src="..\Pingo.CommandLineHelp\bin\Release\Pingo.CommandLineHelp.pdb" target="lib\net35" />
   </files>
 </package>
 

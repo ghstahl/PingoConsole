@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Pingo.TestCommands</id>
+    <title>Pingo Console Kit: A Test Command Plugin</title>
+    <version>$version$</version>
+    <authors>ghstahl</authors>
+    <owners>ghstahl</owners>
+    <projectUrl>https://github.com/ghstahl/PingoConsole</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://choosealicense.com/licenses/mit/</licenseUrl>
+    <description>This is a test command project that is used as the basis of the command VSIX</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright George Stahl 2015</copyright>
+    <tags>Pingo commandline Console c# net45</tags>
+    <dependencies>
+      <dependency id="Pingo.FluentCommandLineParser" version="1.0.24" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\Pingo.TestCommands\bin\Release\Pingo.TestCommands.dll" target="lib\net35" />
+    <file src="..\Pingo.TestCommands\bin\Release\Pingo.TestCommands.pdb" target="lib\net35" />
+  </files>
+</package>
+
+
