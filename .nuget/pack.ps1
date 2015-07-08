@@ -5,6 +5,10 @@ $root = (split-path -parent $MyInvocation.MyCommand.Definition) + '\..'
 $version = [System.Reflection.Assembly]::LoadFile("$root\Pingo.CommandLine\bin\Release\Pingo.CommandLine.dll").GetName().Version
 $versionStr = "{0}.{1}.{2}" -f ($version.Major, $version.Minor, $version.Build)
 
+$assembly = [System.Reflection.Assembly]::LoadFile("$root\Pingo.CommandLine\bin\Release\Pingo.CommandLine.dll");
+$fileVersion = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($assembly.Location).FileVersion;
+$versionStr = $fileVersion
+
 ############################################################################################
 Write-Host "Processing Pingo.Console.nuspec"
 Write-Host "Setting .nuspec version tag to $versionStr"
