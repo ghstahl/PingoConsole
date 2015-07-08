@@ -41,7 +41,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Pingo.CommandLine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Pingo.Console.1.0.24\lib\net45\Pingo.CommandLine.dll</HintPath>
+      <HintPath>..\packages\Pingo.Console.1.0.25\lib\net45\Pingo.CommandLine.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
