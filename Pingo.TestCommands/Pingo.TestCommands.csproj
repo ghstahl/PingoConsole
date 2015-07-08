@@ -36,8 +36,8 @@
       <HintPath>..\packages\Pingo.FluentCommandLineParser.1.0.25\lib\net45\FluentCommandLineParser.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Pingo.CommandLine, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Pingo.Console.1.0.19\lib\net45\Pingo.CommandLine.dll</HintPath>
+    <Reference Include="Pingo.CommandLine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pingo.Console.1.0.24\lib\net45\Pingo.CommandLine.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
