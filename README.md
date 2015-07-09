@@ -36,8 +36,11 @@ Step by Step instructions, a VSIX to do all this will soon follow.
 5. Congratulations you have fully working, single exe, console app that does few nice commands.  Play with it to see what it gives you.
 
 6. Now lets build your own command line plugin.
-  Tools->Extensions and Updates...
+
+  VisualStudio: Tools -> Extensions and Updates... -> Online
+  
   Search for Pingo.Commandline.PluginTemplate
+  
   install and restart visual studio 2013
 
 7. Add->Project   
