@@ -38,6 +38,7 @@ Step by Step instructions, a VSIX to do all this will soon follow.
 6. Now lets build your own command line plugin.
 
   VisualStudio: Tools -> Extensions and Updates... -> Online
+  https://visualstudiogallery.msdn.microsoft.com/7b579419-fdbd-4b47-880c-261409120bb9
   
   Search for Pingo.Commandline.PluginTemplate
   
@@ -45,7 +46,7 @@ Step by Step instructions, a VSIX to do all this will soon follow.
 
 7. Add->Project   
   Select Pingo.Commandline.PluginTemplate
-  A wizard prompt asks for what your command name should be.  I used Json2Xml Xml2Json for mine.  Enter "Sweet" for yours.
+  A wizard prompt asks for what your command name should be.  I used Json2Xml and Xml2Json for mine.  Enter "Sweet" for yours.
 
 8. Build and add as a solution reference to your previously created console app.
 
