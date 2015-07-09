@@ -51,7 +51,7 @@ Step by Step instructions, a VSIX to do all this will soon follow.
 
 9. Done and Run!  
 
-  You should see your "Sweet" command in the list now of usable commands.  
+  You should see your "Sweet" command in the list of now usable commands.  
 
 10. Modify your command project to suit.
 
