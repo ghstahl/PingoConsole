@@ -45,8 +45,11 @@ Step by Step instructions, a VSIX to do all this will soon follow.
   A wizard prompt asks for what your command name should be.  I use Json2Xml, Xml2Json, etc.
 
 8. Build and add as a solution reference to your previously created console app.
+
 9. Done.  
+
 10. Modify your command project to suit.
+
 11. uninstall Pingo.JsonConverters.Commands and Pingo.TestCommands.
 
 
