@@ -11,19 +11,15 @@ Step by Step instructions, a VSIX to do all this will soon follow.
 
 2. Install the following nuget
 
-          Pingo.EmbeddedAssemblies
-          
+          Pingo.EmbeddedAssemblies 
           Agree to the file replacement prompts
 
 3. Install the following nugets
 
-            Pingo.CommandLineHelp
-            
-            Pingo.Console
-            
-            Pingo.JsonConverters.Commands
-            
-            Pingo.TestCommands
+            Pingo.CommandLineHelp 
+            Pingo.Console 
+            Pingo.JsonConverters.Commands 
+            Pingo.TestCommands 
 
 4. Edit Program.cs
 
@@ -61,7 +57,8 @@ Step by Step instructions, a VSIX to do all this will soon follow.
           
           install and restart visual studio 2013
 
-7. Add->Project   
+7. Add->Project
+
           Select Pingo.Commandline.PluginTemplate
           A wizard prompt asks for what your command name should be.  
           I used Json2Xml and Xml2Json for mine.  Enter "Sweet" for yours.
