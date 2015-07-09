@@ -27,11 +27,28 @@ Step by Step instructions, a VSIX to do all this will soon follow.
 
 4. Edit Program.cs
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
-        private static void MainCore(string[] args)
+        using System;
+        using System.Runtime.CompilerServices;
+        using Pingo.CommandLine.Composite;
+
+        namespace ConsoleMe
         {
-            Pingo.CommandLine.EntryPoint.Program.MefRunnerEntryPoint(new EntryAssemblyEmbeddedMefAssemblies(), args);
+            class Program
+            {
+                private static void Main(string[] args)
+                {
+                    AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(ConsoleMe.PingoEmbeddedAssemblies.AssemblyResolver.OnResolveAssembly);
+                    MainCore(args);
+                }
+        
+                [MethodImpl(MethodImplOptions.NoInlining)]
+                private static void MainCore(string[] args)
+                {
+                    Pingo.CommandLine.EntryPoint.Program.MefRunnerEntryPoint(new EntryAssemblyEmbeddedMefAssemblies(), args);
+                }
+            }
         }
+
         
 5. Congratulations you have fully working, single exe, console app that does few nice commands.  Play with it to see what it gives you.
 
