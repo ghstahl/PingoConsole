@@ -81,7 +81,7 @@ namespace Pingo.JsonConverters.Commands.UnitTests.Parser
         }
 
         [TestMethod]
-        public void Invalid_Arguments_Passed_To_ICommand()
+        public void Invalid_Arguments_Passed_To_Json2XmlCommand()
         {
             foreach (var testArg in InValidTestArguments)
             {
@@ -90,7 +90,27 @@ namespace Pingo.JsonConverters.Commands.UnitTests.Parser
                 Assert.IsTrue(result.HasErrors);
             }
         }
+        [TestMethod]
+        public void Invalid_Arguments_Passed_To_Xml2JsonCommand()
+        {
+            foreach (var testArg in InValidTestArguments)
+            {
+                var command = new Xml2JsonCommand();
+                var result = command.ExecuteCommand(testArg);
+                Assert.IsTrue(result.HasErrors);
+            }
+        }
 
+        [TestMethod]
+        public void Invalid_Arguments_Passed_To_JsonSchemaCommand()
+        {
+            foreach (var testArg in InValidTestArguments)
+            {
+                var command = new JsonSchemaCommand();
+                var result = command.ExecuteCommand(testArg);
+                Assert.IsTrue(result.HasErrors);
+            }
+        }
         [TestMethod]
         [DeploymentItem(@"TestData\",@"TestData\")]
         public void Nuspec_To_Json_Success()
@@ -113,6 +133,32 @@ namespace Pingo.JsonConverters.Commands.UnitTests.Parser
 
             var commandSchema = new JsonSchemaCommand();
             result = commandSchema.ExecuteCommand(argsSchema);
+            Assert.IsFalse(result.HasErrors);
+        }
+
+        [TestMethod]
+        [DeploymentItem(@"TestData\", @"TestData\")]
+        public void Json_to_Nuspec_Success()
+        {
+            Assert.IsTrue(File.Exists("TestData\\Package.nuspec"));
+            var fi = new FileInfo("TestData\\Package.nuspec");
+
+            var args = (string[])ArgsTemplate.Clone();
+            args[1] = fi.FullName;
+            args[3] = Path.Combine(fi.Directory.FullName, "Result\\Package.json");
+
+            var command = new Xml2JsonCommand();
+            var result = command.ExecuteCommand(args);
+
+            Assert.IsFalse(result.HasErrors);
+
+            args[1] = Path.Combine(fi.Directory.FullName, "Result\\Package.json");
+            args[3] = Path.Combine(fi.Directory.FullName, string.Format("Result\\{0}.nuspec",Guid.NewGuid().ToString()));
+
+
+            var command3 = new Json2XmlCommand();
+            result = command3.ExecuteCommand(args);
+
             Assert.IsFalse(result.HasErrors);
         }
 

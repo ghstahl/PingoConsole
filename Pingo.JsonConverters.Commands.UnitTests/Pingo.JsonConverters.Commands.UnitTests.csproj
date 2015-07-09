@@ -56,6 +56,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Executables\Xml2JsonExecutableTests.cs" />
+    <Compile Include="Executables\Json2XmlExecutableTests.cs" />
+    <Compile Include="Executables\JsonSchemaExecutableTests.cs" />
+    <Compile Include="Help\CommandHelpTests.cs" />
+    <Compile Include="Help\Json2XmlCommandHelpTests.cs" />
+    <Compile Include="Help\JsonSchemaCommandHelpTests.cs" />
+    <Compile Include="Help\Xml2JsonCommandHelpTests.cs" />
     <Compile Include="Parser\Json2XmlParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,6 +94,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
