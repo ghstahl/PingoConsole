@@ -6,23 +6,36 @@ using System.Linq;
 using Pingo.CommandLine.ArrayUtils;
 using Pingo.CommandLine.ConsoleUtility;
 using Pingo.CommandLine.Contracts.Execute;
+using Pingo.CommandLine.Contracts.Help;
 using Pingo.CommandLine.Execute;
 using Pingo.CommandLineHelp.Pages;
 
 namespace Pingo.CommandLineHelp.Commands
 {
 
-    [Export(typeof(Pingo.CommandLine.Contracts.Help.ICommandLineHelp))]
-    [Export(typeof(Pingo.CommandLine.Contracts.Command.ICommand))]
+    [Export(typeof (Pingo.CommandLine.Contracts.Help.ICommandLineHelp))]
+    [Export(typeof (Pingo.CommandLine.Contracts.Command.ICommand))]
     [ExportMetadata("Command", "Help")]
-    public class HelpCommand : Pingo.CommandLine.Contracts.Command.ICommand, Pingo.CommandLine.Contracts.Help.ICommandLineHelp
+    public class HelpCommand : Pingo.CommandLine.Contracts.Command.ICommand,
+        Pingo.CommandLine.Contracts.Help.ICommandLineHelp
     {
 
         private SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp> _commandHelpList;
 
         private SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp> CommandHelpList
         {
-            get { return _commandHelpList ?? (_commandHelpList = new SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp>()); }
+            get
+            {
+                return _commandHelpList ??
+                       (_commandHelpList = new SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp>());
+            }
+        }
+
+        private IHelpResource _helpResource;
+
+        public void Add(IHelpResource helpResource)
+        {
+            _helpResource = helpResource;
         }
 
         public void Add(Pingo.CommandLine.Contracts.Help.ICommandHelp commandHelp)
@@ -83,7 +96,8 @@ namespace Pingo.CommandLineHelp.Commands
             twoColumnWidths[1] = helpDashboardColumn2Width;
             twoColumnWidths = twoColumnWidths.ToFlexWidthColumns(twoColumnFlexIds, Console.BufferWidth - 1,
                 helpDashboardColumn2Width);
-            var pageMyHelpDashboard = new MyHelpDashboard(CommandHelpList, twoColumnWidths, twoColumnTruncatedIds);
+            var pageMyHelpDashboard = new MyHelpDashboard(CommandHelpList, _helpResource, twoColumnWidths,
+                twoColumnTruncatedIds);
             pageMyHelpDashboard.WritePage();
             return executeResult;
 
@@ -93,7 +107,8 @@ namespace Pingo.CommandLineHelp.Commands
             twoColumnWidths[1] = helpForCommandColumn2Width;
             twoColumnWidths = twoColumnWidths.ToFlexWidthColumns(twoColumnFlexIds, Console.BufferWidth - 1,
                 helpForCommandColumn2Width);
-            var pageMyCommandHelp = new MyCommandHelpPage(targetCommandHelp, twoColumnWidths, twoColumnTruncatedIds);
+            var pageMyCommandHelp = new MyCommandHelpPage(targetCommandHelp, _helpResource, twoColumnWidths,
+                twoColumnTruncatedIds);
             pageMyCommandHelp.WritePage();
             return executeResult;
         }

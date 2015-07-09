@@ -9,14 +9,16 @@ namespace Pingo.CommandLineHelp.Pages
     public class MyHelpDashboard : ColumnConsolePage
     {
         private SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp> _commandHelps;
-
+        private Pingo.CommandLine.Contracts.Help.IHelpResource _helpResource;
         public MyHelpDashboard(
             SortedList<string, Pingo.CommandLine.Contracts.Help.ICommandHelp> commandHelps,
+            Pingo.CommandLine.Contracts.Help.IHelpResource helpResource,
             int[] columnWidthTemplate,
             int[] truncatedColumnIds)
             : base(columnWidthTemplate, truncatedColumnIds)
         {
             _commandHelps = commandHelps;
+            _helpResource = helpResource;
         }
 
         protected override string FetchString(ResourceString resourceString)
@@ -29,8 +31,18 @@ namespace Pingo.CommandLineHelp.Pages
                     result = string.Format(Common.Format_HeaderString
                         , assembly.GetName().Name, assembly.GetName().Version);
                     break;
+                case ResourceString.Header:
+                    if (_helpResource != null)
+                    {
+                        result = _helpResource.Header;
+                    }
+                    break;
+
                 case ResourceString.Footer:
-                    result = Common.Footer;
+                    if (_helpResource != null)
+                    {
+                        result = _helpResource.Footer;
+                    }
                     break;
                 case ResourceString.ColumnBlockTitle:
                     result = Common.AvailableCommands;

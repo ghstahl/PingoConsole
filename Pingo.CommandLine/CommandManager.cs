@@ -18,6 +18,9 @@ namespace Pingo.CommandLine
         [Import(typeof(Pingo.CommandLine.Contracts.Help.ICommandLineHelp))]
         public Pingo.CommandLine.Contracts.Help.ICommandLineHelp CommandLineHelp;
 
+        [Import(typeof(Pingo.CommandLine.Contracts.Help.IHelpResource), AllowDefault = true)]
+        public Pingo.CommandLine.Contracts.Help.IHelpResource HelpResource;
+
         [ImportMany]
         public IEnumerable<Lazy<Pingo.CommandLine.Contracts.Command.ICommand, Pingo.CommandLine.Contracts.Command.ICommandMetaData>> Commands;
 

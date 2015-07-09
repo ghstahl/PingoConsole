@@ -7,13 +7,16 @@ namespace Pingo.CommandLineHelp.Pages
     public class MyCommandHelpPage : ColumnConsolePage
     {
         private Pingo.CommandLine.Contracts.Help.ICommandHelp _commandHelp;
+        private Pingo.CommandLine.Contracts.Help.IHelpResource _helpResource;
         public MyCommandHelpPage(
             Pingo.CommandLine.Contracts.Help.ICommandHelp commandHelp,
+            Pingo.CommandLine.Contracts.Help.IHelpResource helpResource,
             int[] columnWidthTemplate,
             int[] truncatedColumnIds)
             : base(columnWidthTemplate, truncatedColumnIds)
         {
             _commandHelp = commandHelp;
+            _helpResource = _helpResource;
         }
 
         protected override string FetchString(ResourceString resourceString)
@@ -34,9 +37,19 @@ namespace Pingo.CommandLineHelp.Pages
                 case ResourceString.SecondaryTitlePanel:
                     result = _commandHelp.Detailed;
                     break;
-                
+
+                case ResourceString.Header:
+                    if (_helpResource != null)
+                    {
+                        result = _helpResource.Header;
+                    }
+                    break;
+
                 case ResourceString.Footer:
-                    result = Common.Footer;
+                    if (_helpResource != null)
+                    {
+                        result =  _helpResource.Footer;
+                    }
                     break;
             }
             return result;

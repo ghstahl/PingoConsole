@@ -18,6 +18,7 @@ namespace Pingo.CommandLine.ConsoleUtility
         }
         public enum ResourceString
         {
+            Header,
             MainTitlePanel,
             SecondaryTitlePanel,
             ColumnBlockTitle,
@@ -39,6 +40,7 @@ namespace Pingo.CommandLine.ConsoleUtility
         }
         public void WritePage()
         {
+            Write(FetchString(ResourceString.Header));
             Write(FetchString(ResourceString.MainTitlePanel));
             Write(FetchString(ResourceString.SecondaryTitlePanel));
             WriteColumItems();

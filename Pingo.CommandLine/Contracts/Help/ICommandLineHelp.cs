@@ -1,9 +1,8 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace Pingo.CommandLine.Contracts.Help
+﻿namespace Pingo.CommandLine.Contracts.Help
 {
     public interface ICommandLineHelp
     {
+        void Add(IHelpResource helpResource);
         void Add(ICommandHelp commandHelp);
     }
 }

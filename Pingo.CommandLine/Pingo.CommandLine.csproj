@@ -49,6 +49,7 @@
     <Compile Include="ArrayUtils\ArrayItemDeleter.cs" />
     <Compile Include="AssemblyUtility\AssemblyExtensions.cs" />
     <Compile Include="Composite\EntryAssemblyEmbeddedMefAssemblies.cs" />
+    <Compile Include="Contracts\Help\IHelpResource.cs" />
     <Compile Include="EntryPoint\Program.cs" />
     <Compile Include="OptionHelp.cs" />
     <Compile Include="CommandManager.cs" />
