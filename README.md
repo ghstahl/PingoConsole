@@ -10,14 +10,19 @@ Step by Step instructions, a VSIX to do all this will soon follow.
 1. Create a new console project
 
 2. Install the following nuget
+
   Pingo.EmbeddedAssemblies
+
   Agree to the file replacement prompts
 
 3. Install the following nugets 
 
   Pingo.CommandLineHelp
+  
   Pingo.Console
+  
   Pingo.JsonConverters.Commands
+  
   Pingo.TestCommands
 
 4. Edit Program.cs
