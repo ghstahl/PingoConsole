@@ -55,7 +55,9 @@ Step by Step instructions, a VSIX to do all this will soon follow.
 
 10. Modify your command project to suit.
 
-11. uninstall Pingo.JsonConverters.Commands and Pingo.TestCommands.
+11. uninstall Pingo.JsonConverters.Commands and Pingo.TestCommands.  
+
+  Unless you really want to keep them in there for their profound awesomeness.
 
 
 
