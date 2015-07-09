@@ -42,11 +42,13 @@ Step by Step instructions, a VSIX to do all this will soon follow.
 
 7. Add->Project   
   Select Pingo.Commandline.PluginTemplate
-  A wizard prompt asks for what your command name should be.  I use Json2Xml, Xml2Json, etc.
+  A wizard prompt asks for what your command name should be.  I used Json2Xml Xml2Json for mine.  Enter "Sweet" for yours.
 
 8. Build and add as a solution reference to your previously created console app.
 
-9. Done.  
+9. Done and Run!  
+
+  You should see your "Sweet" command in the list now of usable commands.  
 
 10. Modify your command project to suit.
 
