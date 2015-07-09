@@ -7,7 +7,9 @@ This is a Console Framework that is modeled after how nuget.exe work.  It produc
 
 Step by Step instructions, a VSIX to do all this will soon follow.
 
-1. Create a new console project
+1. Create a new console project 
+
+          Enable Nuget Restore for your Solution
 
 2. Install the following nuget
 
