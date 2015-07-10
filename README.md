@@ -73,6 +73,33 @@ You should see your "Sweet" command in the list of now usable commands.
 11. uninstall Pingo.JsonConverters.Commands and Pingo.TestCommands from ConsoleMe  
 Unless you really want to keep them in there for their profound awesomeness.
 
+####Enhancements.  
+This is a work in progress where I am cherry picking what resources I want to let come in via a plugin.  
+At the moment I am only accounting for a header and footer string for the console output pages.  
+
+1. Create a class library project 
+  - [ ] Name it "My.PingoConsole.Theme"
+  - [ ] Enable Nuget Restore for your Solution
+
+2. Add this project as a reference in your console app  
+  - [ ] Name it "My.PingoConsole.Theme"
+  - [ ] Enable Nuget Restore for your Solution  
+
+3. Add the following code to your My.PingoConsole.Theme 
+  ```c#
+  [Export(typeof(Pingo.CommandLine.Contracts.Help.IHelpResource))]
+    public class MakeItMineTheme : Pingo.CommandLine.Contracts.Help.IHelpResource
+    {
+        public string Header { get { return Resources.Common.Header; } }
+        public string Footer { get { return Resources.Common.Footer; } }
+    }
+  ```  
+  I have my strings comming out of resources.  
+
+4. Your Console App should now have your personalized header and footer.  
+ 
+
+
 
 
 

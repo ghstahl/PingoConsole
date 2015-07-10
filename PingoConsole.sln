@@ -49,12 +49,17 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{538176BD-B65C-4034-A549-1D42EE90CF9D}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{338A479A-D8B8-424D-9F5F-AFBB140AD8B9}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\tools\Install.ps1 = .nuget\tools\Install.ps1
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enhancements", "Enhancements", "{D1F2C12C-CEEC-497F-AAA7-A9372DAC887E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.Theme", "Pingo.Theme\Pingo.Theme.csproj", "{57F28BCD-79C2-4BEC-A0D6-9DCF1ABE31D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,6 +107,10 @@ Global
 		{BAB2FF23-CF42-486E-B74D-9084710EE7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAB2FF23-CF42-486E-B74D-9084710EE7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAB2FF23-CF42-486E-B74D-9084710EE7AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F28BCD-79C2-4BEC-A0D6-9DCF1ABE31D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F28BCD-79C2-4BEC-A0D6-9DCF1ABE31D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F28BCD-79C2-4BEC-A0D6-9DCF1ABE31D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F28BCD-79C2-4BEC-A0D6-9DCF1ABE31D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,5 +126,6 @@ Global
 		{F1A2BB41-496B-4EC1-BCCA-B28C06EF3B89} = {4E4B33E3-4E5C-4AAE-898E-74E58C782EE5}
 		{BAB2FF23-CF42-486E-B74D-9084710EE7AF} = {4E4B33E3-4E5C-4AAE-898E-74E58C782EE5}
 		{338A479A-D8B8-424D-9F5F-AFBB140AD8B9} = {3D10ECC3-1ABA-417F-B8BD-65D2EB6CD2EC}
+		{57F28BCD-79C2-4BEC-A0D6-9DCF1ABE31D3} = {D1F2C12C-CEEC-497F-AAA7-A9372DAC887E}
 	EndGlobalSection
 EndGlobal

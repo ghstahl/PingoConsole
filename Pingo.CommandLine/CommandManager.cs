@@ -38,6 +38,8 @@ namespace Pingo.CommandLine
         {
             this.ComposeParts(_assemblAccumulator);
 
+            CommandLineHelp.Add(HelpResource);
+
             if (!Commands.Any())
             {
                 throw new Exception("No ICommandOptionParser objects found");

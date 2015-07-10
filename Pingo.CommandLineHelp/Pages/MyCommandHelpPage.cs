@@ -16,7 +16,7 @@ namespace Pingo.CommandLineHelp.Pages
             : base(columnWidthTemplate, truncatedColumnIds)
         {
             _commandHelp = commandHelp;
-            _helpResource = _helpResource;
+            _helpResource = helpResource;
         }
 
         protected override string FetchString(ResourceString resourceString)
