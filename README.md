@@ -78,12 +78,9 @@ This is a work in progress where I am cherry picking what resources I want to le
 At the moment I am only accounting for a header and footer string for the console output pages.  
 
 1. Create a class library project 
-  - [ ] Name it "My.PingoConsole.Theme"
-  - [ ] Enable Nuget Restore for your Solution
+  - [ ] Name it "My.PingoConsole.Theme"  
 
 2. Add this project as a reference in your console app  
-  - [ ] Name it "My.PingoConsole.Theme"
-  - [ ] Enable Nuget Restore for your Solution  
 
 3. Add the following code to your My.PingoConsole.Theme 
   ```c#
