@@ -6,7 +6,7 @@ Keep it simple.  A lot of parsers, including the one I like, have help and descr
 My parser of choice:  
 https://github.com/ghstahl/fluent-command-line-parser
 
-For most everything I do the below parsing example is about as complicated as I get.  The only think my parser is missing is a mutual exclusion option, but I will add that when I need it.
+For most everything I do the below parsing example is about as complicated as I get.  The only thing my parser is missing is a mutual exclusion option, but I will add that when I need it.
 
 ```c#  
     public class TestArgumentParser
