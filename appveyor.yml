@@ -28,8 +28,8 @@ after_test:
 artifacts:
   - path: '.\*.nupkg'
   - path: '.\Pingo.CommandLine.PluginTemplate\bin\Release\Pingo.CommandLine.PluginTemplate.vsix'
+  - path: '.\JsonConvert\bin\Release\JsonConvert.exe'
     
- 
 
 #uncomment to publish to NuGet
 #deploy:
