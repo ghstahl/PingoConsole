@@ -43,6 +43,7 @@ This is a Console Framework that is modeled after how nuget.exe work.  It produc
       }
   }
   ```  
+  **NOTE:** *This project should never have anymore code added to it.  Its all references from here on out.*  
 
 5. Build and Run  
 
