@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "Parsing!"
-date:   2015-07-12 07:21:31
+title: "Parsing!"
+date: {}
 categories: jekyll update
+published: true
 ---
+
 # Parsing
 Firstly, PingoConsole doesn't care what parser you use for your commands, as that is in isolation.
 
@@ -14,7 +16,7 @@ My parser of choice:
 
 For most everything I do the below parsing example is about as complicated as I get.  The only thing my parser is missing is a mutual exclusion option, but I will add that when I need it.
 
-{% highlight c# %} 
+```c#
 public class TestArgumentParser
 {
     public string SourcePath { get; private set; }
@@ -41,4 +43,4 @@ public class TestArgumentParser
         }
     }
 }
-{% endhighlight %}
+```
