@@ -1,1 +1,1 @@
-Documentation: [Pingo Console!](http://ghstahl.github.io/PingoConsole/)
+Documentation: [Learn Pingo Console!](http://ghstahl.github.io/LearnPingoConsole/en/)
