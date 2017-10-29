@@ -36,13 +36,11 @@
       <HintPath>..\packages\Pingo.FluentCommandLineParser.1.0.25\lib\net45\FluentCommandLineParser.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json.Schema, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.Schema.1.0.9\lib\net45\Newtonsoft.Json.Schema.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json.Schema, Version=3.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Schema.3.0.4\lib\net45\Newtonsoft.Json.Schema.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -54,15 +52,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Cshtml2JsonCommand.cs" />
     <Compile Include="Commands\JsonSchemaCommand.cs" />
     <Compile Include="Commands\Json2XmlCommand.cs" />
     <Compile Include="Commands\Xml2JsonCommand.cs" />
+    <Compile Include="Executables\Cshtml2JsonExecutable.cs" />
+    <Compile Include="Executables\EventSource.cs" />
+    <Compile Include="Executables\FileSystemEnumerator.cs" />
+    <Compile Include="Executables\FileSystemEventSource.cs" />
+    <Compile Include="Executables\IEventSource.cs" />
+    <Compile Include="Executables\IFileSystemEventSink.cs" />
     <Compile Include="Executables\JsonSchemaExecutable.cs" />
     <Compile Include="Executables\Json2XmlExecutable.cs" />
     <Compile Include="Executables\Xml2JsonExecutable.cs" />
+    <Compile Include="Help\Cshtml2JsonCommand.cs" />
     <Compile Include="Help\JsonSchema.cs" />
     <Compile Include="Help\Json2XmlCommand.cs" />
     <Compile Include="Help\Xml2JsonCommand.cs" />
+    <Compile Include="Parser\Cshtml2JsonArgumentParser.cs" />
     <Compile Include="Parser\Json2XmlArgumentParser.cs" />
     <Compile Include="Parser\JsonSchemaArgumentParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

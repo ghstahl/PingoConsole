@@ -1,31 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine", "Pingo.CommandLine\Pingo.CommandLine.csproj", "{922B1E1D-4053-4E46-BF15-9A174743EF8C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{745A479D-50F8-4760-A991-F7A7F43C307C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine.Tests", "Pingo.CommandLine.Tests\Pingo.CommandLine.Tests.csproj", "{9021030F-1A37-4473-85CD-DEC2629FA39D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{1B5E59A6-B3C7-4D56-B760-7D43FD90F39C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.TestCommands", "Pingo.TestCommands\Pingo.TestCommands.csproj", "{C608AEED-E0B0-40C6-B471-CDE5BC0956A7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLineHelp", "Pingo.CommandLineHelp\Pingo.CommandLineHelp.csproj", "{3483C7FE-0661-4268-9035-10FF7E36CD64}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.JsonConverters.Commands", "Pingo.JsonConverters.Commands\Pingo.JsonConverters.Commands.csproj", "{538F714A-4CA7-4255-A3C2-9BE6C66CB85C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{BF4B6A2E-611B-4BE2-9CF7-1527863B52D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.JsonConverters.Commands.UnitTests", "Pingo.JsonConverters.Commands.UnitTests\Pingo.JsonConverters.Commands.UnitTests.csproj", "{39296FCC-AB34-404A-9BB3-E676C126CD71}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine.Resources", "Pingo.CommandLine.Resources\Pingo.CommandLine.Resources.csproj", "{E542977A-42E7-4241-AA39-34A68FCF22E8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{156FD781-7026-4063-A210-F82939BDA017}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConvert", "JsonConvert\JsonConvert.csproj", "{C2EBBE18-AF5F-44F2-A8DC-EAEED6C448A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3D10ECC3-1ABA-417F-B8BD-65D2EB6CD2EC}"
 	ProjectSection(SolutionItems) = preProject
@@ -42,10 +26,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3D10EC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VSIX", "VSIX", "{4E4B33E3-4E5C-4AAE-898E-74E58C782EE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom.Command.Wizard", "Custom.Command.Wizard\Custom.Command.Wizard.csproj", "{F1A2BB41-496B-4EC1-BCCA-B28C06EF3B89}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine.PluginTemplate", "Pingo.CommandLine.PluginTemplate\Pingo.CommandLine.PluginTemplate.csproj", "{BAB2FF23-CF42-486E-B74D-9084710EE7AF}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{538176BD-B65C-4034-A549-1D42EE90CF9D}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
@@ -58,6 +38,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{338A479A
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enhancements", "Enhancements", "{D1F2C12C-CEEC-497F-AAA7-A9372DAC887E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine", "Pingo.CommandLine\Pingo.CommandLine.csproj", "{922B1E1D-4053-4E46-BF15-9A174743EF8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine.Tests", "Pingo.CommandLine.Tests\Pingo.CommandLine.Tests.csproj", "{9021030F-1A37-4473-85CD-DEC2629FA39D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.TestCommands", "Pingo.TestCommands\Pingo.TestCommands.csproj", "{C608AEED-E0B0-40C6-B471-CDE5BC0956A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLineHelp", "Pingo.CommandLineHelp\Pingo.CommandLineHelp.csproj", "{3483C7FE-0661-4268-9035-10FF7E36CD64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.JsonConverters.Commands", "Pingo.JsonConverters.Commands\Pingo.JsonConverters.Commands.csproj", "{538F714A-4CA7-4255-A3C2-9BE6C66CB85C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.JsonConverters.Commands.UnitTests", "Pingo.JsonConverters.Commands.UnitTests\Pingo.JsonConverters.Commands.UnitTests.csproj", "{39296FCC-AB34-404A-9BB3-E676C126CD71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine.Resources", "Pingo.CommandLine.Resources\Pingo.CommandLine.Resources.csproj", "{E542977A-42E7-4241-AA39-34A68FCF22E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConvert", "JsonConvert\JsonConvert.csproj", "{C2EBBE18-AF5F-44F2-A8DC-EAEED6C448A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom.Command.Wizard", "Custom.Command.Wizard\Custom.Command.Wizard.csproj", "{F1A2BB41-496B-4EC1-BCCA-B28C06EF3B89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.CommandLine.PluginTemplate", "Pingo.CommandLine.PluginTemplate\Pingo.CommandLine.PluginTemplate.csproj", "{BAB2FF23-CF42-486E-B74D-9084710EE7AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingo.Theme", "Pingo.Theme\Pingo.Theme.csproj", "{57F28BCD-79C2-4BEC-A0D6-9DCF1ABE31D3}"
 EndProject
@@ -116,16 +116,19 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{BF4B6A2E-611B-4BE2-9CF7-1527863B52D9} = {745A479D-50F8-4760-A991-F7A7F43C307C}
+		{338A479A-D8B8-424D-9F5F-AFBB140AD8B9} = {3D10ECC3-1ABA-417F-B8BD-65D2EB6CD2EC}
 		{9021030F-1A37-4473-85CD-DEC2629FA39D} = {745A479D-50F8-4760-A991-F7A7F43C307C}
 		{C608AEED-E0B0-40C6-B471-CDE5BC0956A7} = {1B5E59A6-B3C7-4D56-B760-7D43FD90F39C}
 		{3483C7FE-0661-4268-9035-10FF7E36CD64} = {1B5E59A6-B3C7-4D56-B760-7D43FD90F39C}
 		{538F714A-4CA7-4255-A3C2-9BE6C66CB85C} = {1B5E59A6-B3C7-4D56-B760-7D43FD90F39C}
-		{BF4B6A2E-611B-4BE2-9CF7-1527863B52D9} = {745A479D-50F8-4760-A991-F7A7F43C307C}
 		{39296FCC-AB34-404A-9BB3-E676C126CD71} = {BF4B6A2E-611B-4BE2-9CF7-1527863B52D9}
 		{C2EBBE18-AF5F-44F2-A8DC-EAEED6C448A6} = {156FD781-7026-4063-A210-F82939BDA017}
 		{F1A2BB41-496B-4EC1-BCCA-B28C06EF3B89} = {4E4B33E3-4E5C-4AAE-898E-74E58C782EE5}
 		{BAB2FF23-CF42-486E-B74D-9084710EE7AF} = {4E4B33E3-4E5C-4AAE-898E-74E58C782EE5}
-		{338A479A-D8B8-424D-9F5F-AFBB140AD8B9} = {3D10ECC3-1ABA-417F-B8BD-65D2EB6CD2EC}
 		{57F28BCD-79C2-4BEC-A0D6-9DCF1ABE31D3} = {D1F2C12C-CEEC-497F-AAA7-A9372DAC887E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1B2B91F-A51E-44F1-AC62-67F2E84F7AB3}
 	EndGlobalSection
 EndGlobal

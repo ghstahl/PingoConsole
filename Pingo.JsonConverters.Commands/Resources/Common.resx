@@ -126,6 +126,9 @@
   <data name="Argument_PathToXml" xml:space="preserve">
     <value>&lt;path to xml file&gt;</value>
   </data>
+  <data name="Description_cshtml2json" xml:space="preserve">
+    <value>Converts all .cshtml files in folders and subfolders to json.</value>
+  </data>
   <data name="Description_Json2Xml" xml:space="preserve">
     <value>Converts a Json.Net XML schema file to XML</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="Format_OptionUsage" xml:space="preserve">
     <value>{0} {1}</value>
+  </data>
+  <data name="Name_cshtml2json" xml:space="preserve">
+    <value>cshtml2json</value>
   </data>
   <data name="Name_Json2Xml" xml:space="preserve">
     <value>Json2Xml</value>
@@ -150,6 +156,9 @@
   <data name="OptionDescription_Help" xml:space="preserve">
     <value>Shows Help</value>
   </data>
+  <data name="OptionDescription_Output_cshtml2json" xml:space="preserve">
+    <value>The path to the new Json file.</value>
+  </data>
   <data name="OptionDescription_Output_Json2Xml" xml:space="preserve">
     <value>The path to the new XML file.</value>
   </data>
@@ -159,11 +168,14 @@
   <data name="OptionDescription_Schema_Json" xml:space="preserve">
     <value>The path to a json schema file.</value>
   </data>
+  <data name="OptionDescription_Source_cshtml2json" xml:space="preserve">
+    <value>The root path to search for .cshtml files.</value>
+  </data>
   <data name="OptionDescription_Source_Json2Xml" xml:space="preserve">
-    <value>The pah to an Json file.</value>
+    <value>The path to an Json file.</value>
   </data>
   <data name="OptionDescription_Source_Xml2Json" xml:space="preserve">
-    <value>The pah to an XML file.</value>
+    <value>The path to an XML file.</value>
   </data>
   <data name="OptionLongName_Output" xml:space="preserve">
     <value>Output</value>
@@ -185,6 +197,9 @@
   </data>
   <data name="OptionUsage_Help" xml:space="preserve">
     <value>-Help</value>
+  </data>
+  <data name="UsageFragment_cshtml2json" xml:space="preserve">
+    <value>-Source &lt;path to root folder&gt; -Output &lt;path to new json file&gt;</value>
   </data>
   <data name="UsageFragment_Json2Xml" xml:space="preserve">
     <value>-Source &lt;path to json file&gt; -Output &lt;path to new xml file&gt;</value>
