@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Pingo.CommandLine.Contracts.Execute;
 using Pingo.CommandLine.Execute;
@@ -27,6 +28,16 @@ namespace Pingo.JsonConverters.Commands.Executables
                 var sub = fullPath.Substring(_root.Length);
                 var location = sub.Replace('\\', '/');
                 var content = File.ReadAllText(fullPath);
+                int oldLength;
+                do
+                {
+                    oldLength = content.Length;
+                    content = content.Replace("\r\n\r\n", "\r\n");
+                } while (content.Length != oldLength);
+
+                Regex re = new Regex("\r\n$");
+                content = re.Replace(content, " ").Trim();
+
                 RazorLocations.Add(new RazorLocation() { Location = location, Content = content });
             }
         }
